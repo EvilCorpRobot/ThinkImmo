@@ -1,0 +1,11 @@
+{
+    "name": "evilcorprobot/think-immo",
+    "autoload": {
+        "psr-4": {
+            "Evilcorprobot\\ThinkImmo\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
