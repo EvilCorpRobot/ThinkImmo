@@ -2,7 +2,7 @@
 
 
 <div class="container">
-    <div class="brand-logo"></div>
+    <div class="brand-logo"><img src="../assets/logo_transp.png" alt=""></div>
     <div class="brand-title">Thinkimmo</div>
     <div class="inputs">
         <label>EMAIL</label>
