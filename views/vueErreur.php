@@ -1,1 +1,1 @@
-<p>Une erreur est survenue : <?= $msgErreur ?></p>
+<p>(vueErreur.php) Une erreur est survenue : <?= $msgErreur ?></p>
