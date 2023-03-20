@@ -1,0 +1,1 @@
+<p>(vueErreur.php) Une erreur est survenue : <?= $msgErreur ?></p>

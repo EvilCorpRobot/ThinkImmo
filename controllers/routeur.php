@@ -1,10 +1,11 @@
 <?php
 
 require_once 'admin.php';
+require_once 'property.php';
 require_once 'flat.php';
 require_once 'house.php';
 require_once 'pictures.php';
-require_once '././views/vue.php';
+require_once './views/vue.php';
 
 class Routeur {
 

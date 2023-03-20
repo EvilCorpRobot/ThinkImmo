@@ -1,15 +1,14 @@
 <?php
 
-require_once '././views/vue.php';
+require_once './models/M_Admin.php';
+require_once './views/vue.php';
 
 class ControllerAdmin {
 
-    private $email;
-    private $password;
+    private $admin;
 
     public function __construct() {
-        $email = 'null';
-        $password = 'null';
+        $this->admin = new Admin();
     }
 
     //affiche la page login
@@ -18,8 +17,8 @@ class ControllerAdmin {
     }
 
     //recupere les infos donné a la page
-    //et les compare a la bdd : 
-    //true : page HomeDashboard
+    //les envoi et les compare a la bdd : 
+    //true : page HomeDashboard + admin Connecté
     //false: message mauvais motdepasse/mail
     public function adminLogin() {
 
