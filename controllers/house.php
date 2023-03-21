@@ -1,13 +1,14 @@
 <?php
 
 require_once './models/M_House.php';
-require_once './views/vue.php';
+require_once './views/view.php';
 
-class ControllerHouse {
+class ControllerHouse extends ControllerProperty  {
 
     private $picture;
 
     public function __construct() {
+        parent::__construct();
         $this->picture = new Picture();
     }
 
@@ -18,6 +19,16 @@ class ControllerHouse {
 
     //affiche vue Description House DashBoard
     public function displayHouseDashboard() {
+
+    }
+
+    //affiche vue Creation de maison
+    public function displayHouseCreate() {
+
+    }
+
+    //affiche vue Modification de maison
+    public function displayHouseUpdate() {
 
     }
 
