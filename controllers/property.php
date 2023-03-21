@@ -17,6 +17,12 @@ class ControllerProperty {
 
     }
 
+    //permet d'afficher la page ClientHome apres filtrage
+    //titre - image des appartements et des maisons
+    public function displayClientResult() {
+
+    }
+
     //permet d'afficher la page DashBoardHome
     //titre - image des appartements et des maisons
     public function displayDashHome() {
