@@ -5,7 +5,7 @@ require_once 'property.php';
 require_once 'flat.php';
 require_once 'house.php';
 require_once 'pictures.php';
-require_once './views/vue.php';
+require_once './views/view.php';
 
 class Routeur {
 
@@ -54,6 +54,12 @@ class Routeur {
                     if($_GET['action'] == 'displayHouseDashboard') {
                         $this->ctrlHouse->displayHouseDashboard();
                     } else
+                    if($_GET['action'] == 'displayHouseCreate') {
+                        $this->ctrlHouse->displayHouseCreate();
+                    } else
+                    if($_GET['action'] == 'displayHouseUpdate') {
+                        $this->ctrlHouse->displayHouseUpdate();
+                    } else
                     if($_GET['action'] == 'getHouse') {
                         $this->ctrlHouse->getHouse();
                     } else
@@ -71,6 +77,12 @@ class Routeur {
                     } else
                     if($_GET['action'] == 'displayFlatDashboard') {
                         $this->ctrlFlat->displayFlatDashboard();
+                    } else
+                    if($_GET['action'] == 'displayFlatCreate') {
+                        $this->ctrlFlat->displayFlatCreate();
+                    } else
+                    if($_GET['action'] == 'displayFlatUpdate') {
+                        $this->ctrlFlat->displayFlatUpdate();
                     } else
                     if($_GET['action'] == 'getFlat') {
                         $this->ctrlFlat->getFlat();
@@ -93,7 +105,7 @@ class Routeur {
     }
 
     private function erreur($msgErreur) {
-        $vue = new Vue("Erreur");
+        $vue = new View("Erreur");
         $vue->generer(array('msgErreur' => $msgErreur));
     }
 
