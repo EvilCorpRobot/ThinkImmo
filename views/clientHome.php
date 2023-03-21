@@ -1,6 +1,6 @@
-
 <link rel="stylesheet" href="./styles/clientHome.css">
-<main class="container">
+<div class="toggle_button_content">
+    <div class="toggle_container">
         <ul class="links">
             <input type="checkbox" id="cb1" /><label for="cb1">Maison</label>
             <input type="checkbox" id="cb2" /><label for="cb2">Appartement</label>
@@ -27,4 +27,5 @@
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</div>
