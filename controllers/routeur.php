@@ -33,6 +33,9 @@ class Routeur {
                     if($_GET['action'] == 'adminLogin') {
                         $this->ctrlAdmin->adminLogin();
                     } else
+                    if($_GET['action'] == 'displayClientResult') {
+                        $this->ctrlProperty->displayClientResult();
+                    } else
                     if($_GET['action'] == 'displayDashHome') {
                         $this->ctrlProperty->displayDashHome();
                     } else
