@@ -33,10 +33,12 @@
         </div>
 
     </header>
+    <main>
+    <div id="contenu">
+        <?= $contenu ?>
+    </div>
 
-    
-
-
+    </main>
     <footer>
         <div class="footer-top">
             <div class="container text-center">

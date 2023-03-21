@@ -3,10 +3,8 @@
   }
   .toggle_button_content {
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-
+    align-items: center;
   }
 /*TOGGLE BUTTONS */
 
@@ -133,3 +131,18 @@
     height: 100%;
     position: absolute;
 }
+@media(max-width: 1300px){
+    .links label {
+        padding: 0;
+    }
+    
+}
+@media(max-width: 1020px){
+    label {
+        padding: 0.5rem;
+    }
+    .dropdown_menu {
+        z-index: 1;
+    }
+}
+

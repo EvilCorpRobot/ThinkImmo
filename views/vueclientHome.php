@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="./styles/clientHome.css">
 <div class="toggle_button_content">
     <div class="toggle_container">
@@ -29,3 +30,5 @@
         </div>
     </div>
 </div>
+<?php $contenu = ob_get_clean(); ?>
+<?php require 'template.php'; ?>
