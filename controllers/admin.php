@@ -1,6 +1,6 @@
 <?php
 
-require_once './property.php';
+require_once 'property.php';
 require_once './models/M_Admin.php';
 require_once './views/view.php';
 

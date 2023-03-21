@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="./styles/clientHome.css">
+<link rel="stylesheet" href="./views/styles/clientHome.css">
 <main class="container">
         <ul class="links">
             <input type="checkbox" id="cb1" /><label for="cb1">Maison</label>
@@ -9,7 +9,7 @@
 
         </ul>
         <div class="header_content">
-            <img src="../assets/ThinkImmoBackgroundImage.jpg" alt="Image de recherche">
+            <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="Image de recherche">
         </div>
         <div class="Card">
             <div class="CardInner">
