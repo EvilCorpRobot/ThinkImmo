@@ -1,21 +1,21 @@
 <?php
 
-class Vue {
+class View {
 
     private $fichier;
     private $titre;
 
     public function __construct($action) {
-        $this->fichier = "views/vue" . $action . ".php";
+        $this->fichier = "views/view" . $action . ".php";
     }
 
     public function generer($donnees) {
         $contenu = $this->genererFichier($this->fichier, $donnees);
-        $vue = $this->genererFichier(
+        $view = $this->genererFichier(
             'views/template.php',
             array('titre' => $this->titre, 'contenu' => $contenu)
         );
-        echo $vue;
+        echo $view;
     }
 
     private function genererFichier($fichier, $donnees) {

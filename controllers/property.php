@@ -1,7 +1,7 @@
 <?php
 
 require_once './models/M_Property.php';
-require_once './views/vue.php';
+require_once './views/view.php';
 
 class ControllerProperty {
 

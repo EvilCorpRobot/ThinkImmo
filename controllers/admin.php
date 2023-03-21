@@ -1,7 +1,8 @@
 <?php
 
+require_once './property.php';
 require_once './models/M_Admin.php';
-require_once './views/vue.php';
+require_once './views/view.php';
 
 class ControllerAdmin {
 
@@ -13,7 +14,7 @@ class ControllerAdmin {
 
     //affiche la page login
     public function displayLogin() {
-        
+ 
     }
 
     //recupere les infos donné a la page
