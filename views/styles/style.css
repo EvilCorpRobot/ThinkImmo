@@ -5,18 +5,18 @@
     /* background-color: #c8e7d8; */
 }
 
-h1 {
+.navbar h2 {
     font-size: 1.5rem;
 }
-li {
+.navbar li {
     list-style: none;
 }
-a {
+.navbar a {
     text-decoration:none;
     color:#000;
     font-size: 1rem;
 }
-a:hover {
+.navbar a:hover {
     color: orange;
 }
 /* HEADER */

@@ -18,7 +18,7 @@
 
             <div class="logo">
                 <img src="../assets/logo_transp.png" alt="logo de thinkimmo">
-                <h1>Thinkimmo</h1>
+                <h2>Thinkimmo</h2>
 
             </div>
 
@@ -63,7 +63,7 @@
                         <div class="wrapper centered">
                             <article class="letter">
                                 <div class="side">
-                                    <h1>Contactez-nous</h1>
+                                    <h2>Contactez-nous</h2>
                                     <p>
                                         <textarea class="line_area" placeholder="Votre message"></textarea>
                                     </p>
