@@ -9,7 +9,6 @@ $this->titre = "Accueil";
 <main class="container">
     <img class="before_form_img" src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
     <form>
-
         <div class="grid_container">
             <div class="grid">
                 <label class="card">
@@ -21,7 +20,7 @@ $this->titre = "Accueil";
                                 </svg></span></div>
                         <header class="card__body-header">
                             <h2 class="card__body-header-title">Vente</h2>
-
+                         
                         </header>
                     </div>
                 </label>
