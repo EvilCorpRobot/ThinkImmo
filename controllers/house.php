@@ -5,11 +5,11 @@ require_once './views/view.php';
 
 class ControllerHouse extends ControllerProperty  {
 
-    private $picture;
+    private $house;
 
     public function __construct() {
         parent::__construct();
-        $this->picture = new Picture();
+        $this->house = new House();
     }
 
     //affiche vue Description House Client
@@ -24,12 +24,14 @@ class ControllerHouse extends ControllerProperty  {
 
     //affiche vue Creation de maison
     public function displayHouseCreate() {
-
+        $vue = new View("House_Create");
+        $vue->generer(["error" => "error"]);
     }
 
     //affiche vue Modification de maison
     public function displayHouseUpdate() {
-
+        $vue = new View("House_Update");
+        $vue->generer(["error" => "error"]);
     }
 
     //recupere en Bdd une maison

@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 $this->titre = "Accueil";
 
@@ -7,8 +7,9 @@ $this->titre = "Accueil";
 
 <link rel="stylesheet" href="./views/styles/clientHome.css">
 <main class="container">
-    <img class="before_form_img" src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
+ <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
     <form>
+   
         <div class="grid_container">
             <div class="grid">
                 <label class="card">
@@ -94,19 +95,19 @@ $this->titre = "Accueil";
 
     <div class="container_card_home">
 
-        <?php foreach ($properties as $propertie) { ?>
-            <?php foreach ($pictures as $picture) { ?>
-                <div class="card_home">
-                    <div class="card_header">
-                        <img src="<?= '.' . $picture['first_url'] ?>" alt="Image 1">
-                    </div>
-                    <div class="card_body_home">
-                        <span class="tag tag-teal"><?= $propertie['title'] ?></span>
-                    </div>
-                </div>
-                <?php break; ?>
-            <?php } ?>
-        <?php } ?>
+    <?php foreach($properties as $propertie) {?>
+    <?php foreach($pictures as $picture) {?>
+        <div class="card_home">
+            <div class="card_header">
+                <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+            </div>
+            <div class="card_body_home">
+                <span class="tag tag-teal"><?= $propertie['title'] ?></span>
+            </div>
+        </div>
+        <?php break; ?>
+    <?php } ?>
+    <?php } ?>
 
     </div>
 </main>
