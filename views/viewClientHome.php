@@ -111,3 +111,6 @@ $this->titre = "Accueil";
 
     </div>
 </main>
+
+    </div>
+</main>

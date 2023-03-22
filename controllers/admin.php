@@ -1,27 +1,29 @@
 <?php
 
-require_once 'property.php';
 require_once './models/M_Admin.php';
 require_once './views/view.php';
 
 class ControllerAdmin {
 
     private $admin;
-
     public function __construct() {
         $this->admin = new Admin();
     }
 
     //affiche la page login
     public function displayLogin() {
- 
+        $loginView = new View("Login");
+        $loginView->generer(["error" => false]);
     }
 
-    //recupere les infos donné a la page
-    //les envoi et les compare a la bdd : 
-    //true : page HomeDashboard + admin Connecté
-    //false: message mauvais motdepasse/mail
     public function adminLogin() {
-
+        $id = $this->admin->isConnect($_POST["email"], $_POST["password"]);
+        if($id) {
+            session_start();
+            $_SESSION["auth"]["id"] = $id;
+        } else {
+            $loginView = new View("Login");
+            $loginView->generer(["error" => true]);
+        }
     }
 }
