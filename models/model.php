@@ -8,7 +8,7 @@ abstract class Model {
 
     protected function executeRequest($sql, $params = null) {
         if ($params == null) {
-            return$resultat = getBdd()->query($sql);
+            return $resultat = getBdd()->query($sql);
         } else {
             $resultat = getBdd()->prepare($sql);
             $resultat->execute($params);
