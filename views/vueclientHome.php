@@ -10,7 +10,7 @@
 
         </ul>
         <div class="header_content">
-            <img src="../assets/ThinkImmoBackgroundImage.jpg" alt="Image de recherche">
+            <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="Image de recherche">
         </div>
         <div class="Card">
             <div class="CardInner">

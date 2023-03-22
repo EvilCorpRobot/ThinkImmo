@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="../views/styles/clientHome.css">
+<link rel="stylesheet" href="./views/styles/clientHome.css">
 <main class="container">
 
     <form>
-        <img class="imageDeUne" src="../assets/ThinkImmoBackgroundImage.jpg" alt="">
+        <img class="imageDeUne" src="./assets/ThinkImmoBackgroundImage.jpg" alt="">
         <div class="container">
             <div class="grid">
                 <label class="card">
