@@ -48,7 +48,7 @@
     margin-top: 30px;
   }
   
-  .login_container label, input, button {
+  .login_container label, input, .btn_form_login {
     display: block;
     width: 100%;
     padding: 0;
@@ -79,7 +79,7 @@
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   }
   
-  .login_container button {
+  .login_container .btn_form_login {
     color: white;
     margin-top: 20px;
     background: #ff5d5d;
@@ -91,6 +91,6 @@
     transition: 0.5s;
   }
   
-  .login_container button:hover {
+  .login_container .btn_form_login:hover {
     box-shadow: none;
   }
