@@ -41,7 +41,82 @@ class ControllerHouse extends ControllerProperty  {
 
     //ajoute en Bdd une maison
     public function addHouse() {
+        // echo "bonjour";
 
+        if(!empty($_POST)) {  //a tester avec isset()
+
+            // print_r($_POST);
+
+            $contract = $_POST['contract'];
+            $title = $_POST['title'];
+            $address = $_POST['address'];
+            $description = $_POST['description'];
+            $area = $_POST['area'];
+            $charge = $_POST['charge'];
+            $rooms = $_POST['rooms'];
+            $epd = $_POST['epd'];
+            $kitchen = $_POST['kitchen'];
+            $parking = $_POST['parking'];
+            $exterior = $_POST['exterior'];
+            $pool = $_POST['pool'];
+            $landArea = $_POST['landArea'];
+            $floor = $_POST['floor'];
+            $outbuilding = $_POST['outbuilding'];
+            $price = $_POST['price'];
+            
+            $result = $this->house->add_House(
+                $contract,
+                $title,
+                $address,
+                $description,
+                $area,
+                $charge,
+                $rooms,
+                $epd,
+                $kitchen,
+                $parking,
+                $exterior,
+                $pool,
+                $landArea,
+                $floor,
+                $outbuilding,
+                $price,
+            );
+
+            echo $contract; 
+            echo '<br>';
+            echo $title; 
+            echo '<br>';
+            echo $address; 
+            echo '<br>';
+            echo $description; 
+            echo '<br>';
+            echo $area; 
+            echo '<br>';
+            echo $charge; 
+            echo '<br>';
+            echo $rooms; 
+            echo '<br>';
+            echo $epd; 
+            echo '<br>';
+            echo $kitchen; 
+            echo '<br>';
+            echo $parking; 
+            echo '<br>';
+            echo $exterior; 
+            echo '<br>';
+            echo $pool; 
+            echo '<br>';
+            echo $landArea; 
+            echo '<br>';
+            echo $floor; 
+            echo '<br>';
+            echo $outbuilding; 
+            echo '<br>';
+            echo $price;
+            echo '<br>';
+
+        }
     }
 
     //suprrime en Bdd une maison
