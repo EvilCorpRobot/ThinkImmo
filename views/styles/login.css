@@ -1,7 +1,7 @@
-  body {
+   .login {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
     background: #faf1ed;
     display: flex;
     align-items: center;
@@ -9,9 +9,9 @@
     justify-content: center;
     place-items: center;
     overflow: hidden;
-  }
+  } 
   
-  .container {
+  .login_container {
     position: relative;
     width: 350px;
     height: 500px;
@@ -20,6 +20,7 @@
     box-sizing: border-box;
     background: #faf1ed;
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+    
   }
   
   .brand-logo {

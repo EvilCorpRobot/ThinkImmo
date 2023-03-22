@@ -2,7 +2,7 @@
 
 <div class="login">
     <div class="login_container">
-        <div class="brand-logo"><img src="../assets/logo_transp.png" alt=""></div>
+        <div class="brand-logo"><img src="./assets/logo_transp.png" alt=""></div>
         <div class="brand-title">Thinkimmo</div>
         <div class="inputs">
             <form action="/index.php?action=adminLogin" method="post">
@@ -19,5 +19,3 @@
         </div>
     </div>
 </div>
-<?php $contenu = ob_get_clean(); ?>
-<?php require 'template.php'; ?>
