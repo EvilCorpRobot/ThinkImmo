@@ -9,7 +9,7 @@ $this->titre = "Accueil";
 <main class="container">
 
     <form>
-    <img src="/assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
+    <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
         <div class="grid_container">
             <div class="grid">
                 <label class="card">
