@@ -1,4 +1,4 @@
-  .login {
+  body {
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -11,7 +11,7 @@
     overflow: hidden;
   }
   
-  .login_container {
+  .container {
     position: relative;
     width: 350px;
     height: 500px;
@@ -20,10 +20,9 @@
     box-sizing: border-box;
     background: #faf1ed;
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-    
   }
   
-  .login_container .brand-logo {
+  .brand-logo {
     height: 100px;
     width: 100px;
     margin: auto;
@@ -31,11 +30,11 @@
     box-sizing: border-box;
     box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
   }
-  .login_container .brand-logo img {
+  .brand-logo img {
     width: 100%;
     margin-top: 15%;
   }
-  .login_container .brand-title {
+  .brand-title {
     margin-top: 10px;
     font-weight: 900;
     font-size: 1.8rem;
@@ -43,7 +42,7 @@
     letter-spacing: 1px;
   }
   
-  .login_container .inputs {
+  .inputs {
     text-align: left;
     margin-top: 30px;
   }
@@ -57,19 +56,19 @@
     box-sizing: border-box;
   }
   
-  .login_container label {
+  label {
     margin-bottom: 4px;
   }
   
-  .login_container label:nth-of-type(2) {
+  label:nth-of-type(2) {
     margin-top: 12px;
   }
   
-  .login_container input::placeholder {
+  input::placeholder {
     color: gray;
   }
   
-  .login_container input {
+  input {
     background: #faf1ed;
     padding: 10px;
     padding-left: 20px;
@@ -79,7 +78,7 @@
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   }
   
-  .login_container .btn_form_login {
+  .login_container button {
     color: white;
     margin-top: 20px;
     background: #ff5d5d;
@@ -91,6 +90,6 @@
     transition: 0.5s;
   }
   
-  .login_container .btn_form_login:hover {
+  .login_container button:hover {
     box-shadow: none;
   }
