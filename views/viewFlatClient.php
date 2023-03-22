@@ -1,10 +1,11 @@
 <?php
 
-$this->titre = "Appartement";
+$this->titre = "Flat";
 
 ?>
 
-<link rel="stylesheet" href="./styles/descriptionflat.css">
+<link rel="stylesheet" href="./views/styles/descriptionflat.css">
+
 <h1>Location</h1>
 <span id="type_location">Type de bien</span>
 <div class="image_flat_content">
@@ -18,3 +19,5 @@ $this->titre = "Appartement";
 </div>
 <span id="address_location">Adresse</span>
 <span id="price_location">Prix</span>
+
+<input type="radio">
