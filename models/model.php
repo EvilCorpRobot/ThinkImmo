@@ -17,7 +17,7 @@ abstract class Model {
     private function getBdd() {
         if($this->bdd == null) {
             $this->bdd = new PDO('mysql:host=localhost;dbname=thinkimmo;charset=utf8',
-            'root', 'Mt326', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return $this->bdd;
     }

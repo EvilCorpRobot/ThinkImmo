@@ -163,18 +163,20 @@
   }
   
   form {
-    min-height: 100vh;
     display: flex;
     font-family: "Inter", Arial;
     justify-content: center;
     align-items: center;
     color: #000;
+    width:100%;
+     background-image: url("/assets/ThinkImmoBackgroundImage.jpg");
+     background-size: contain;
   }
   form .imageDeUne {
     width:100%;
   }
-  form .container {
-    position: absolute;
+  form .grid_container {
+    /* position: absolute; */
     top: 300px;
     backdrop-filter: blur(20px);
   }

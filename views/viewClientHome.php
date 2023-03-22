@@ -9,8 +9,8 @@ $this->titre = "Accueil";
 <main class="container">
 
     <form>
-        <img class="imageDeUne" src="./assets/ThinkImmoBackgroundImage.jpg" alt="">
-        <div class="container">
+    <img src="/assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
+        <div class="grid_container">
             <div class="grid">
                 <label class="card">
                     <input class="card__input" type="checkbox" />
