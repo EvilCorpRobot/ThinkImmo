@@ -1,3 +1,10 @@
+<?php 
+
+$this->titre = "Accueil";
+
+?>
+
+
 <link rel="stylesheet" href="./views/styles/clientHome.css">
 <main class="container">
 
@@ -8,7 +15,7 @@
                 <label class="card">
                     <input class="card__input" type="checkbox" />
                     <div class="card__body">
-                        <div class="card__body-cover"><img class="card__body-cover-image" src="../assets/euro.jpg" /><span class="card__body-cover-checkbox">
+                        <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/euro.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
                                     <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                                 </svg></span></div>
@@ -21,7 +28,7 @@
                 <label class="card">
                     <input class="card__input" type="checkbox" />
                     <div class="card__body">
-                        <div class="card__body-cover"><img class="card__body-cover-image" src="../assets/clé.jpg" /><span class="card__body-cover-checkbox">
+                        <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/clé.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
                                     <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                                 </svg></span></div>
@@ -34,7 +41,7 @@
                 <label class="card">
                     <input class="card__input" type="checkbox" />
                     <div class="card__body">
-                        <div class="card__body-cover"><img class="card__body-cover-image" src="../assets/house.jpg" /><span class="card__body-cover-checkbox">
+                        <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/house.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
                                     <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                                 </svg></span></div>
@@ -46,7 +53,7 @@
                 <label class="card">
                     <input class="card__input" type="checkbox" />
                     <div class="card__body">
-                        <div class="card__body-cover"><img class="card__body-cover-image" src="../assets/immeuble.jpg" /><span class="card__body-cover-checkbox">
+                        <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/immeuble.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
                                     <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                                 </svg></span></div>
@@ -87,70 +94,20 @@
     </form>
 
     <div class="container_card_home">
+
+    <?php foreach($properties as $propertie) {?>
+    <?php foreach($pictures as $picture) {?>
         <div class="card_home">
             <div class="card_header">
-                <img src="https://placehold.it/480x430" alt="Image 1">
+                <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
             </div>
             <div class="card_body_home">
-                <span class="tag tag-teal">Technology</span>
-
+                <span class="tag tag-teal"><?= $propertie['title'] ?></span>
             </div>
         </div>
+        <?php break; ?>
+    <?php } ?>
+    <?php } ?>
 
-
-        <div class="card_home">
-            <div class="card_header">
-                <img src="https://placehold.it/480x430" alt="Image 1">
-            </div>
-            <div class="card_body_home">
-                <span class="tag tag-teal">Technology</span>
-
-            </div>
-        </div>
-
-        <div class="card_home">
-            <div class="card_header">
-                <img src="https://placehold.it/480x430" alt="Image 1">
-            </div>
-            <div class="card_body_home">
-                <span class="tag tag-teal">Technology</span>
-
-            </div>
-        </div>
-
-        <div class="card_home">
-            <div class="card_header">
-                <img src="https://placehold.it/480x430" alt="Image 1">
-            </div>
-            <div class="card_body_home">
-                <span class="tag tag-teal">Technology</span>
-
-            </div>
-        </div>
-
-        <div class="card_home">
-            <div class="card_header">
-                <img src="https://placehold.it/480x430" alt="Image 1">
-            </div>
-            <div class="card_body_home">
-                <span class="tag tag-teal">Technology</span>
-
-            </div>
-        </div>
-
-        <div class="card_home">
-            <div class="card_header">
-                <img src="https://placehold.it/480x430" alt="Image 1">
-            </div>
-            <div class="card_body_home">
-                <span class="tag tag-teal">Technology</span>
-
-            </div>
-        </div>
     </div>
-
-
-
 </main>
-<?php $contenu = ob_get_clean(); ?>
-<?php require 'template.php'; ?>
