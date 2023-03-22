@@ -21,7 +21,7 @@ $this->titre = "Accueil";
                                 </svg></span></div>
                         <header class="card__body-header">
                             <h2 class="card__body-header-title">Vente</h2>
-
+                         
                         </header>
                     </div>
                 </label>
