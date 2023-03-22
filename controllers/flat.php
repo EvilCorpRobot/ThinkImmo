@@ -15,7 +15,9 @@ class ControllerFlat extends ControllerProperty {
 
     //affiche vue Description Flat Client
     public function displayFlatClient() {
-        
+        $vue = new View("FlatClient");
+        $vue->generer(["error", "error"]);
+        // index.php?action=displayFlatClient
     }
 
     //affiche vue Description Flat DashBoard

@@ -72,6 +72,8 @@ header {
 .action_btn:hover {
     scale:1.05;
     color:#000;
+    -webkit-transition: background-color 0.2s;
+    transition: scale 0.2 ease;
 }
 .action_btn:active {
     scale:0.95;
@@ -90,6 +92,7 @@ header {
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
 }
 .dropdown_menu.open {
     height: 60px;
@@ -296,6 +299,7 @@ a.socials-item:hover {
 
 .footer-bottom a:hover {
     color: white;
+    outline: -moz-none;
 }
 
 
@@ -371,7 +375,7 @@ footer p {
 
 /* FORM FOOTER */
 
-  .wrapper .side textarea, input, button {
+  .wrapper .side textarea, .side input, .side button {
     line-height: 1.5rem;
     border: 0;
     outline: none;
