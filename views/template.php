@@ -29,7 +29,6 @@
         <div class="dropdown_menu">
             <li><a href="#" class="action_btn">Se connecter</a></li>
         </div>
-
     </header>
 
     <main>
