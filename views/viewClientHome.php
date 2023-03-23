@@ -95,19 +95,21 @@ $this->titre = "Accueil";
 
     <div class="container_card_home">
 
-        <?php foreach ($properties as $propertie) { ?>
-            <?php foreach ($pictures as $picture) { ?>
-                <div class="card_home">
-                    <div class="card_header">
-                        <img src="<?= '.' . $picture['first_url'] ?>" alt="Image 1">
-                    </div>
-                    <div class="card_body_home">
-                        <span class="tag tag-teal"><?= $propertie['title'] ?></span>
-                    </div>
+    <?php foreach($properties as $propertie) {?>
+    <?php foreach($pictures as $picture) {?>
+        <!-- <a href="/index.php?action="> -->
+            <div class="card_home">
+                <div class="card_header">
+                    <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
                 </div>
-                <?php break; ?>
-            <?php } ?>
-        <?php } ?>
+                <div class="card_body_home">
+                    <span class="tag tag-teal"><?= $propertie['title'] ?></span>
+                </div>
+            </div>
+        <!-- </a> -->
+        <?php break; ?>
+    <?php } ?>
+    <?php } ?>
 
     </div>
 </main>
