@@ -1,3 +1,6 @@
+.location {
+  color:#ff5d5d;
+}
 .image_flat_content {
     display: grid;
     grid-template-columns: 1fr 1fr;  
@@ -5,24 +8,64 @@
 .image_flat_content > * {
   margin: 0;
 }
-.col-1 {
+.colo-1 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.col-1, .col-2 {
+.colo-1, .colo-2 {
     display: flex;
     flex-direction: column;
     background-color: aquamarine;
   }
 
-.col-1 img, .col-2 img {
+.colo-1 img, .colo-2 img {
     width: 70%;
     height: auto;
     
   }
   
-.col-1 img {
+.colo-1 img {
     width: 70%;
   }
-  
+
+#price_location {
+  font-size: 3rem;
+}
+#description {
+  color:#ff5d5d;
+}
+
+/* critère tableau */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px auto;
+  border: 3px solid #000;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px #000;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 14px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
