@@ -59,5 +59,7 @@ $this->titre = "Creation Maison";
     <label for="price">Price</label><br>
     <input type="number" name="price"><br>
 
+    <input type="hidden" name="type" value="Maison">
+
     <input type="submit" value="Creation">
 </form>

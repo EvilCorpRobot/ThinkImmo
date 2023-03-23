@@ -51,6 +51,7 @@ class ControllerHouse extends ControllerProperty  {
             $title = $_POST['title'];
             $address = $_POST['address'];
             $description = $_POST['description'];
+            $type= $_POST['type'];
             $area = $_POST['area'];
             $charge = $_POST['charge'];
             $rooms = $_POST['rooms'];
@@ -69,6 +70,7 @@ class ControllerHouse extends ControllerProperty  {
                 $title,
                 $address,
                 $description,
+                $type,
                 $area,
                 $charge,
                 $rooms,
@@ -76,11 +78,11 @@ class ControllerHouse extends ControllerProperty  {
                 $kitchen,
                 $parking,
                 $exterior,
+                $price,
                 $pool,
                 $landArea,
                 $floor,
-                $outbuilding,
-                $price,
+                $outbuilding
             );
 
             echo $contract; 
@@ -114,6 +116,8 @@ class ControllerHouse extends ControllerProperty  {
             echo $outbuilding; 
             echo '<br>';
             echo $price;
+            echo '<br>';
+            echo $type;
             echo '<br>';
 
         }
