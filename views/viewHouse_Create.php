@@ -14,6 +14,11 @@ $this->titre = "Creation Maison";
     <label for="title">Titre</label><br>
     <input type="text" name="title"><br>
 
+    <!-- <input type="file" name="picture" multiple><br> -->
+    <!-- <img src="https://placehold.it/480x430" alt="Image 1">
+    <img src="https://placehold.it/480x430" alt="Image 1">
+    <img src="https://placehold.it/480x430" alt="Image 1"><br> -->
+
     <label for="address">Adresse</label><br>
     <input type="text" name="address"><br>
     

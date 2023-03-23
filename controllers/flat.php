@@ -27,7 +27,8 @@ class ControllerFlat extends ControllerProperty {
 
     //affiche vue Creation d'appartement
     public function displayFlatCreate() {
-
+        $vue = new View('Flat_Create');
+        $vue->generer(["error" => "error"]);
     }
 
     //affiche vue Modification d'appartement
@@ -43,7 +44,31 @@ class ControllerFlat extends ControllerProperty {
 
     //ajoute en Bdd un appartement
     public function addFlat() {
-        
+       
+            if(isset($_POST)) {
+
+                $contract = $_POST['contract'];
+                $title = $_POST['title'];
+                // $picture = $_POST['picture'];
+                $address = $_POST['address'];
+                $description = $_POST['description'];
+                $type = $_POST['type'];
+                $area = $_POST['area'];
+                $charge = $_POST['charge'];
+                $rooms = $_POST['rooms'];
+                $epd = $_POST['epd'];
+                $kitchen = $_POST['kitchen'];
+                $parking = $_POST['parking'];
+                $exterior = $_POST['exterior'];
+                $parcel = $_POST['parcel'];
+                $floorNumber = $_POST['floorNumber'];
+                $price = $_POST['price'];
+
+                $this->flat->add_Flat(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+                                        $kitchen, $parking, $exterior, $price, $parcel, $floorNumber);
+                
+                $this->displayDashHome();
+            }
     }
 
     //supprime en Bdd un appartement
