@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $this->titre = "Accueil";
 
@@ -6,10 +6,10 @@ $this->titre = "Accueil";
 
 
 <link rel="stylesheet" href="./views/styles/clientHome.css">
-<main class="container">
- <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
+<main class="home_container">
+    <img class="home_container_img" src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
     <form>
-   
+
         <div class="grid_container">
             <div class="grid">
                 <label class="card">
@@ -21,7 +21,7 @@ $this->titre = "Accueil";
                                 </svg></span></div>
                         <header class="card__body-header">
                             <h2 class="card__body-header-title">Vente</h2>
-                         
+
                         </header>
                     </div>
                 </label>
@@ -95,22 +95,22 @@ $this->titre = "Accueil";
 
     <div class="container_card_home">
 
-    <?php foreach($properties as $propertie) {?>
-    <?php foreach($pictures as $picture) {?>
-        <div class="card_home">
-            <div class="card_header">
-                <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
-            </div>
-            <div class="card_body_home">
-                <span class="tag tag-teal"><?= $propertie['title'] ?></span>
-            </div>
-        </div>
-        <?php break; ?>
-    <?php } ?>
-    <?php } ?>
+        <?php foreach ($properties as $propertie) { ?>
+            <?php foreach ($pictures as $picture) { ?>
+                <div class="card_home">
+                    <div class="card_header">
+                        <img src="<?= '.' . $picture['first_url'] ?>" alt="Image 1">
+                    </div>
+                    <div class="card_body_home">
+                        <span class="tag tag-teal"><?= $propertie['title'] ?></span>
+                    </div>
+                </div>
+                <?php break; ?>
+            <?php } ?>
+        <?php } ?>
 
     </div>
 </main>
 
-    </div>
+</div>
 </main>

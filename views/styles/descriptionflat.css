@@ -1,3 +1,7 @@
+.description_container {
+  margin: 40px;
+}
+
 .location {
   color:#ff5d5d;
 }
@@ -39,7 +43,7 @@
 /* critère tableau */
 
 table {
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   width: 100%;
   margin: 20px auto;
   border: 3px solid #000;
@@ -48,6 +52,7 @@ table {
   text-align: center;
   background-color: #fff;
   box-shadow: 0px 0px 5px #000;
+  border: none;
 }
 
 th {
@@ -69,3 +74,4 @@ td {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+

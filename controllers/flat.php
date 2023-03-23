@@ -27,7 +27,7 @@ class ControllerFlat extends ControllerProperty {
 
     //affiche vue Creation d'appartement
     public function displayFlatCreate() {
-
+        
     }
 
     //affiche vue Modification d'appartement

@@ -3,7 +3,7 @@
 $this->titre = "Creation Appartement";
 
 ?>
-
+<link rel="stylesheet" href="/views/styles/flatCreate.css">
 <form action="#">
     <label for="contrat">Contrat</label><br>
     <input type="radio" name="location" value="location">
