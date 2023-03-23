@@ -25,6 +25,7 @@ class House extends Model {
     
     public function update_House(   $houseId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
                                     $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding) {
+        
         $sql = "UPDATE property SET contract=?, title=?, address=?, description=?, type=?, area=?, charge=?, rooms=?, epd=?,
                                     kitchen=?, parking=?, exterior=?, price=?
                 WHERE id_property=?;
