@@ -33,7 +33,6 @@ class ControllerFlat extends ControllerProperty {
 
     //affiche vue Modification d'appartement
     public function displayFlatUpdate() {
-
         $flatInfo = $this->getFlat();
 
         $vue = new View("Flat_Update");
