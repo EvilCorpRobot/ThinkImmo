@@ -11,8 +11,10 @@ class House extends Model {
 
                 INSERT INTO house (id_property, pool, landArea, floor, outbuilding)
                 VALUES (LAST_INSERT_ID(), ?, ?, ?, ?);";
-        $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+        $result = $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
                                             $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding));
+        
+        return $result;
     }
     
 }

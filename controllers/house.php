@@ -3,55 +3,60 @@
 require_once './models/M_House.php';
 require_once './views/view.php';
 
-class ControllerHouse extends ControllerProperty  {
+class ControllerHouse extends ControllerProperty
+{
 
     private $house;
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->house = new House();
     }
 
     //affiche vue Description House Client
-    public function displayHouseClient() {
-
+    public function displayHouseClient()
+    {
     }
 
     //affiche vue Description House DashBoard
-    public function displayHouseDashboard() {
-
+    public function displayHouseDashboard()
+    {
     }
 
     //affiche vue Creation de maison
-    public function displayHouseCreate() {
+    public function displayHouseCreate()
+    {
         $vue = new View("House_Create");
         $vue->generer(["error" => "error"]);
     }
 
     //affiche vue Modification de maison
-    public function displayHouseUpdate() {
+    public function displayHouseUpdate()
+    {
         $vue = new View("House_Update");
         $vue->generer(["error" => "error"]);
     }
 
     //recupere en Bdd une maison
-    public function gethouse() {
-
+    public function gethouse()
+    {
     }
 
     //ajoute en Bdd une maison
-    public function addHouse() {
-        // echo "bonjour";
+    public function addHouse()
+    {
 
-        if(!empty($_POST)) {  //a tester avec isset()
+        if (isset($_POST)) {
 
             // print_r($_POST);
 
             $contract = $_POST['contract'];
             $title = $_POST['title'];
+            // $picture = $_POST['picture'];
             $address = $_POST['address'];
             $description = $_POST['description'];
-            $type= $_POST['type'];
+            $type = $_POST['type'];
             $area = $_POST['area'];
             $charge = $_POST['charge'];
             $rooms = $_POST['rooms'];
@@ -64,72 +69,21 @@ class ControllerHouse extends ControllerProperty  {
             $floor = $_POST['floor'];
             $outbuilding = $_POST['outbuilding'];
             $price = $_POST['price'];
-            
-            $result = $this->house->add_House(
-                $contract,
-                $title,
-                $address,
-                $description,
-                $type,
-                $area,
-                $charge,
-                $rooms,
-                $epd,
-                $kitchen,
-                $parking,
-                $exterior,
-                $price,
-                $pool,
-                $landArea,
-                $floor,
-                $outbuilding
-            );
 
-            echo $contract; 
-            echo '<br>';
-            echo $title; 
-            echo '<br>';
-            echo $address; 
-            echo '<br>';
-            echo $description; 
-            echo '<br>';
-            echo $area; 
-            echo '<br>';
-            echo $charge; 
-            echo '<br>';
-            echo $rooms; 
-            echo '<br>';
-            echo $epd; 
-            echo '<br>';
-            echo $kitchen; 
-            echo '<br>';
-            echo $parking; 
-            echo '<br>';
-            echo $exterior; 
-            echo '<br>';
-            echo $pool; 
-            echo '<br>';
-            echo $landArea; 
-            echo '<br>';
-            echo $floor; 
-            echo '<br>';
-            echo $outbuilding; 
-            echo '<br>';
-            echo $price;
-            echo '<br>';
-            echo $type;
-            echo '<br>';
+            $result = $this->house->add_House( $contract, $title, $address, $description, $type, $area, $charge, $rooms,
+                                                 $epd, $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding);
 
+            $this->displayClientHome();
         }
     }
 
     //suprrime en Bdd une maison
-    public function deleteHouse() {
-
+    public function deleteHouse()
+    {
     }
 
     //met a jour en Bdd une maison
-    public function updateHouse() {
-
+    public function updateHouse()
+    {
     }
 }
