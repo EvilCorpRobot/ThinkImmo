@@ -97,7 +97,7 @@ $this->titre = "Accueil";
 
     <?php foreach($properties as $propertie) {?>
     <?php foreach($pictures as $picture) {?>
-        <!-- <a href="/index.php?action="> -->
+        <a href="./index.php?action=displayHouseClient&id_property=<?= $propertie['id_property'] ?>" method="post">
             <div class="card_home">
                 <div class="card_header">
                     <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
@@ -106,7 +106,7 @@ $this->titre = "Accueil";
                     <span class="tag tag-teal"><?= $propertie['title'] ?></span>
                 </div>
             </div>
-        <!-- </a> -->
+        </a>
         <?php break; ?>
     <?php } ?>
     <?php } ?>

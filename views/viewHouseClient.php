@@ -1,3 +1,12 @@
+<?php 
+
+$idProperty = $_GET['id_property'];
+
+echo $idProperty;
+
+?>
+
+
 <?php
 
 $this->titre = "House";
