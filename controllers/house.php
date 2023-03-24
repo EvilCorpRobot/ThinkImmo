@@ -17,6 +17,9 @@ class ControllerHouse extends ControllerProperty
     //affiche vue Description House Client
     public function displayHouseClient()
     {
+        $vue = new View("HouseClient");
+        $vue->generer(["error", "error"]);
+        // index.php?action=displayHouseClient
     }
 
     //affiche vue Description House DashBoard
