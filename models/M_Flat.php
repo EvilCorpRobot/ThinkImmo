@@ -4,6 +4,12 @@ require_once 'models/model.php';
 
 class Flat extends Model {
    
+    public function get_Flat() {
+        $sql = "SELECT * FROM property INNER JOIN flat ON flat.id_property = property.id_property;";
+        $result = $this->executeRequest($sql);
+        return $result;
+    }
+
     public function add_Flat(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
                                 $kitchen, $parking, $exterior, $price, $parcel, $floorNumber) {
         $sql = "INSERT INTO property (contract, title, address, description, type, area, charge, rooms, epd, kitchen, parking, exterior, price)
@@ -14,6 +20,22 @@ class Flat extends Model {
         $result = $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
                                             $kitchen, $parking, $exterior, $price, $parcel, $floorNumber));
 
+        return $result;
+    }
+
+    public function update_Flat($flatId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+                                $kitchen, $parking, $exterior, $price, $parcel, $floorNumber) {
+        
+        $sql = "UPDATE property SET contract=?, title=?, address=?, description=?, type=?, area=?, charge=?, rooms=?, epd=?,
+                                    kitchen=?, parking=?, exterior=?, price=?
+                WHERE id_property=?;
+                                    
+                UPDATE flat SET parcel=?, floorNumber=?
+                WHERE id_property=?";
+
+        $result = $this->executeRequest($sql, array($contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+                                                    $kitchen, $parking, $exterior, $price, $flatId, $parcel, $floorNumber, $flatId));
+        
         return $result;
     }
 }

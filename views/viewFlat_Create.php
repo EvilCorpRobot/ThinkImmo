@@ -61,7 +61,6 @@ $this->titre = "Creation Appartement";
                     <input type="number" name="parking">
                 </div>
             </div>
-
             <!-- --- -->
             <div class="flat_area_1">
                 <div>
