@@ -4,6 +4,12 @@ require_once 'models/model.php';
 
 class House extends Model {
 
+    public function get_HouseAllInfo($id_property) {
+        $sql = 'SELECT * FROM property INNER JOIN house ON house.id_property = property.id_property WHERE property.id_property = ?;';
+        $result = $this->executeRequest($sql, array($id_property));
+        return $result;
+    }
+
     public function get_House() {
         $sql = 'SELECT * FROM property INNER JOIN house ON house.id_property = property.id_property;';
         $result = $this->executeRequest($sql);
@@ -18,7 +24,7 @@ class House extends Model {
                 INSERT INTO house (id_property, pool, landArea, floor, outbuilding)
                 VALUES (LAST_INSERT_ID(), ?, ?, ?, ?);";
         $result = $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
-                                            $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding));
+                                        $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding));
         
         return $result;
     }

@@ -17,13 +17,19 @@ class ControllerHouse extends ControllerProperty
     //affiche vue Description House Client
     public function displayHouseClient()
     {
+        $idProperty = $_GET['id_property'];
+        // echo $idProperty;
+
+        $houseAllInfo = $this->house->get_HouseAllInfo($idProperty); 
+
         $vue = new View("HouseClient");
-        $vue->generer(["error" => "error"]);
+        $vue->generer(["houseAllInfo" => $houseAllInfo]);
     }
 
     //affiche vue Description House DashBoard
     public function displayHouseDashboard()
     {
+        
     }
 
     //affiche vue Creation de maison
