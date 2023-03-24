@@ -1,10 +1,18 @@
 <?php 
 
-$this->titre = "Mofification Maison";
+    $this->titre = "Mofification Maison";
 
 ?>
 
-<form action="./index.php?action=updateHouse" method="post">
+<?php
+
+    $idProperty = $_GET['id_property'];
+
+    // echo $idProperty;
+
+?>
+
+<form action="./index.php?action=updateHouse&id_property=<?= $idProperty ?>" method="post">
 
     <?php foreach($houseInfo as $info) { ?>
 

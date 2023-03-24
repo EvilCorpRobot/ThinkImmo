@@ -4,7 +4,15 @@ $this->titre = "Modification Appartement";
 
 ?>
 
-<form action="./index.php?action=updateFlat" method="post">
+<?php
+
+    $idProperty = $_GET["id_property"];
+
+    // echo $idProperty;
+
+?>
+
+<form action="./index.php?action=updateFlat&id_property=<?= $idProperty ?>" method="post">
 
 <?php foreach($flatInfo as $info) { ?>
 

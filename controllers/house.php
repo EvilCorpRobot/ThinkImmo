@@ -29,7 +29,12 @@ class ControllerHouse extends ControllerProperty
     //affiche vue Description House DashBoard
     public function displayHouseDashboard()
     {
-        
+        $idProperty = $_GET['id_property'];
+
+        $houseAllInfo = $this->house->get_HouseAllInfo($idProperty);
+
+        $vue = new View("HouseDash");
+        $vue->generer(["houseAllInfo" => $houseAllInfo]);
     }
 
     //affiche vue Creation de maison
@@ -42,10 +47,12 @@ class ControllerHouse extends ControllerProperty
     //affiche vue Modification de maison
     public function displayHouseUpdate()
     {
-        $houseInfo = $this->getHouse();
+        $idProperty = $_GET['id_property'];
+
+        $houseAllInfo = $this->house->get_HouseAllInfo($idProperty);
 
         $vue = new View("House_Update");
-        $vue->generer(["houseInfo" => $houseInfo]);
+        $vue->generer(["houseInfo" => $houseAllInfo]);
     }
 
     //recupere en Bdd une maison
@@ -98,7 +105,7 @@ class ControllerHouse extends ControllerProperty
     //met a jour en Bdd une maison
     public function updateHouse()
     {
-        $houseId = 1;
+        $houseId = $_GET['id_property'];
             
         if(isset($_POST)) {
 

@@ -1,6 +1,14 @@
+<?php 
+
+    $idProperty = $_GET['id_property'];
+
+    echo $idProperty;
+
+?>
+
 <?php
 
-$this->titre = "Flat";
+$this->titre = "Description Flat Client";
 
 ?>
 
@@ -11,9 +19,9 @@ $this->titre = "Flat";
     <div class="form_flat_create">
         <form action="" method="post">
             <div class="flat_area">
-                <label for="contract">Location</label><br>
+                <label for="contract"><?= $flatAllInfo[0]['contract']; ?></label><br>
 
-                <label for="title">Titre</label><br>
+                <label for="title"><?= $flatAllInfo[0]['title']; ?></label><br>
 
                 <!-- <div>
                     <img src="https://placehold.it/480x430" alt="Image 1">
@@ -21,68 +29,67 @@ $this->titre = "Flat";
                     <img src="https://placehold.it/480x430" alt="Image 1">
                 </div>-->
 
-                <label for="address">Adresse</label><br>
+                <label for="address"><?= $flatAllInfo[0]['address']; ?></label><br>
                 <span class="info"></span>
 
                 <label for="description">Description</label><br>
-                <textarea name="description"></textarea><br>
+                <textarea name="description"><?= $flatAllInfo[0]['description']; ?></textarea><br>
             </div>
             <!-- --- -->
             <div class="flat_area_1">
                 <div>
-                    <label for="area">Surface m2</label>
+                    <label for="area"><?= $flatAllInfo[0]['area']; ?></label>
                     <span class="info"></span>
                 </div>
                 <div>
-                    <label for="charge">Charge/mois</label>
+                    <label for="charge"><?= $flatAllInfo[0]['charge']; ?></label>
                     <span class="info"></span>
                 </div>
                 <div>
-                    <label for="rooms">Nombre de pieces</label>
-                    <span class="info"></span>
-                </div>
-            </div>
-            <!-- --- -->
-            <div class="flat_area_1">
-                <div>
-                    <label for="epd">Note environementale</label>
-                    <span class="info"></span>
-                </div>
-                <div>
-
-                    <label for="kitchen">Cuisine</label>
-                    <span class="info"></span>
-                </div>
-                <div>
-
-                    <label for="parking">Parking</label>
-                    <span class="info"></span>
-                </div>
-            </div>
-
-            <!-- --- -->
-            <div class="flat_area_1">
-                <div>
-                    <label for="exterior">Exterieur</label>
-                    <span class="info"></span>
-                </div>
-                <div>
-                    <label for="parcel">Parcelle m2</label>
-                    <span class="info"></span>
-                </div>
-                <div>
-                    <label for="floorNumber">Numero d'Etage</label>
+                    <label for="rooms"><?= $flatAllInfo[0]['rooms']; ?></label>
                     <span class="info"></span>
                 </div>
             </div>
             <!-- --- -->
             <div class="flat_area_1">
-
                 <div>
-                    <label for="price">Prix en €</label>
+                    <label for="epd"><?= $flatAllInfo[0]['epd']; ?></label>
                     <span class="info"></span>
                 </div>
+                <div>
 
+                    <label for="kitchen"><?= $flatAllInfo[0]['kitchen']; ?></label>
+                    <span class="info"></span>
+                </div>
+                <div>
+
+                    <label for="parking"><?= $flatAllInfo[0]['parking']; ?></label>
+                    <span class="info"></span>
+                </div>
+            </div>
+
+            <!-- --- -->
+            <div class="flat_area_1">
+                <div>
+                    <label for="exterior"><?= $flatAllInfo[0]['exterior']; ?></label>
+                    <span class="info"></span>
+                </div>
+                <div>
+                    <label for="parcel"><?= $flatAllInfo[0]['parcel']; ?></label>
+                    <span class="info"></span>
+                </div>
+                <div>
+                    <label for="floorNumber"><?= $flatAllInfo[0]['floorNumber']; ?></label>
+                    <span class="info"></span>
+                </div>
+            </div>
+            <!-- --- -->
+            <div class="flat_area_1">
+
+                <div>
+                    <label for="price"><?= $flatAllInfo[0]['price']; ?></label>
+                    <span class="info"></span>
+                </div>
             </div>
         </form>
     </div>
