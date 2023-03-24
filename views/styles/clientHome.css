@@ -1,6 +1,15 @@
 *, *::before, *::after {
     box-sizing: inherit;
   }
+  .home_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .home_container_img {
+    width:80%;
+  }
   .card {
     --background: #fff;
     --background-checkbox: #0082ff;
@@ -409,8 +418,8 @@
   .container_card_home {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    padding-left: 91px;
+    /* grid-gap: 1rem; */
+    column-gap: 5rem;
   }
   .card_home {
     margin: 10px;

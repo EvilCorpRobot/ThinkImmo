@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $this->titre = "Accueil";
 
@@ -6,10 +6,10 @@ $this->titre = "Accueil";
 
 
 <link rel="stylesheet" href="./views/styles/clientHome.css">
-<main class="container">
- <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
+<main class="home_container">
+    <img class="home_container_img" src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
     <form>
-   
+
         <div class="grid_container">
             <div class="grid">
                 <label class="card">
@@ -21,7 +21,7 @@ $this->titre = "Accueil";
                                 </svg></span></div>
                         <header class="card__body-header">
                             <h2 class="card__body-header-title">Vente</h2>
-                         
+
                         </header>
                     </div>
                 </label>
@@ -114,5 +114,5 @@ $this->titre = "Accueil";
     </div>
 </main>
 
-    </div>
+</div>
 </main>
