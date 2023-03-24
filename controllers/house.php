@@ -37,13 +37,17 @@ class ControllerHouse extends ControllerProperty
     //affiche vue Modification de maison
     public function displayHouseUpdate()
     {
+        $houseInfo = $this->getHouse();
+
         $vue = new View("House_Update");
-        $vue->generer(["error" => "error"]);
+        $vue->generer(["houseInfo" => $houseInfo]);
     }
 
     //recupere en Bdd une maison
-    public function gethouse()
+    public function getHouse()
     {
+        $houseInfo = $this->house->get_House();
+        return $houseInfo;
     }
 
     //ajoute en Bdd une maison
@@ -76,17 +80,47 @@ class ControllerHouse extends ControllerProperty
             $result = $this->house->add_House( $contract, $title, $address, $description, $type, $area, $charge, $rooms,
                                                  $epd, $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding);
 
-            $this->displayClientHome();
+            $this->displayDashHome();
         }
     }
 
-    //suprrime en Bdd une maison
+    //suprime en Bdd une maison
     public function deleteHouse()
     {
+
     }
 
     //met a jour en Bdd une maison
     public function updateHouse()
     {
+        $houseId = 1;
+            
+        if(isset($_POST)) {
+
+            // var_dump($_POST);            
+
+            $contract = $_POST['contract'];
+            $title = $_POST['title'];
+            // $picture = $_POST['picture'];
+            $address = $_POST['address'];
+            $description = $_POST['description'];
+            $type = $_POST['type'];
+            $area = $_POST['area'];
+            $charge = $_POST['charge'];
+            $rooms = $_POST['rooms'];
+            $epd = $_POST['epd'];
+            $kitchen = $_POST['kitchen'];
+            $parking = $_POST['parking'];
+            $exterior = $_POST['exterior'];
+            $pool = $_POST['pool'];
+            $landArea = $_POST['landArea'];
+            $floor = $_POST['floor'];
+            $outbuilding = $_POST['outbuilding'];
+            $price = $_POST['price'];
+
+            $result = $this->house->update_House($houseId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+                                $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding);
+        }
+        $this->displayDashHome();
     }
 }
