@@ -4,7 +4,7 @@ $this->titre = "Creation Appartement";
 
 ?>
 
-<link rel="stylesheet" href="./views/styles/flatcreate.css">
+<link rel="stylesheet" href="./views/styles/flatCreate.css">
 <div class="flat_create_container">
     <div class="form_flat_create">
         <form action="./index.php?action=addFlat" method="post">
