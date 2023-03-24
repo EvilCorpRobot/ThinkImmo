@@ -1,0 +1,40 @@
+
+.form_house_create {
+    background-color: #faf1ed;
+    padding-left: 40px;
+    margin:auto;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom : 20px;
+  }
+  
+  .form_house_create input, textarea {
+    border-radius : 25.5px;
+  }
+  .form_house_create textarea {
+    width: 95%;
+    height: 225px;
+  }
+  .house_area {
+    margin-left:35px;
+  }
+  .house_area_1 div {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 40px; 
+    padding-left: 35px;
+  }
+  
+  .house_area_1 label {
+    display: block;
+    margin-bottom: 5px; 
+  }
+  
+  
+  .create_house_btn {
+    padding: 0 20px;
+    margin-top:30px;
+    margin-left:187px;
+  }
+  
+  

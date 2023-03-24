@@ -9,20 +9,20 @@ $this->titre = "Flat";
 
 <div class="flat_create_container">
     <div class="form_flat_create">
-        <form action="./index.php?action=addFlat" method="post">
+        <form action="" method="post">
             <div class="flat_area">
                 <label for="contract">Location</label><br>
 
                 <label for="title">Titre</label><br>
 
-<div>>
-                <img src="https://placehold.it/480x430" alt="Image 1">
-                <img src="https://placehold.it/480x430" alt="Image 1">
-                <img src="https://placehold.it/480x430" alt="Image 1">
-</div>
+                <!-- <div>
+                    <img src="https://placehold.it/480x430" alt="Image 1">
+                    <img src="https://placehold.it/480x430" alt="Image 1">
+                    <img src="https://placehold.it/480x430" alt="Image 1">
+                </div>-->
 
                 <label for="address">Adresse</label><br>
-
+                <span class="info"></span>
 
                 <label for="description">Description</label><br>
                 <textarea name="description"></textarea><br>
@@ -31,32 +31,32 @@ $this->titre = "Flat";
             <div class="flat_area_1">
                 <div>
                     <label for="area">Surface m2</label>
-                    <input type="number" name="area">
+                    <span class="info"></span>
                 </div>
                 <div>
                     <label for="charge">Charge/mois</label>
-                    <input type="number" name="charge">
+                    <span class="info"></span>
                 </div>
                 <div>
                     <label for="rooms">Nombre de pieces</label>
-                    <input type="number" name="rooms">
+                    <span class="info"></span>
                 </div>
             </div>
             <!-- --- -->
             <div class="flat_area_1">
                 <div>
                     <label for="epd">Note environementale</label>
-                    <input type="text" name="epd">
+                    <span class="info"></span>
                 </div>
                 <div>
 
                     <label for="kitchen">Cuisine</label>
-                    <input type="text" name="kitchen">
+                    <span class="info"></span>
                 </div>
                 <div>
 
                     <label for="parking">Parking</label>
-                    <input type="number" name="parking">
+                    <span class="info"></span>
                 </div>
             </div>
 
@@ -64,15 +64,15 @@ $this->titre = "Flat";
             <div class="flat_area_1">
                 <div>
                     <label for="exterior">Exterieur</label>
-                    <input type="text" name="exterior">
+                    <span class="info"></span>
                 </div>
                 <div>
                     <label for="parcel">Parcelle m2</label>
-                    <input type="number" name="parcel">
+                    <span class="info"></span>
                 </div>
                 <div>
                     <label for="floorNumber">Numero d'Etage</label>
-                    <input type="number" name="floorNumber">
+                    <span class="info"></span>
                 </div>
             </div>
             <!-- --- -->
@@ -80,7 +80,7 @@ $this->titre = "Flat";
 
                 <div>
                     <label for="price">Prix en €</label>
-                    <input type="number" name="price">
+                    <span class="info"></span>
                 </div>
 
             </div>
