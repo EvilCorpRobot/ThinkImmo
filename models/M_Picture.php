@@ -10,5 +10,5 @@ class Picture extends Model {
                 GROUP BY id_property';
         $firstPictures = $this->executeRequest($sql);
         return $firstPictures;
-    }    
+    } 
 }

@@ -6,6 +6,8 @@ $this->titre = "DashBoard";
 
 
 <link rel="stylesheet" href="./views/styles/clientHome.css">
+
+
 <main class="container">
  <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
     <form>
@@ -93,21 +95,36 @@ $this->titre = "DashBoard";
         </div>
     </form>
 
-    <div class="container_card_home">
+    <p>Dashboard</p>
 
+    <div class="container_card_home">
     <?php foreach($properties as $propertie) {?>
     <?php foreach($pictures as $picture) {?>
-        <!-- <a href="/index.php?action="> -->
-            <div class="card_home">
-                <div class="card_header">
-                    <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+        <?php if($propertie['type'] == 'Maison') { ?>
+                <div class="card_home">
+                    <a href="./index.php?action=displayHouseUpdate&id_property=<?= $propertie['id_property'] ?>" method="post">
+                        <div class="card_header">
+                            <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+                        </div>
+                        <div class="card_body_home">
+                            <span class="tag tag-teal"><?= $propertie['title'] ?></span>
+                        </div>
+                    </a>
                 </div>
-                <div class="card_body_home">
-                    <span class="tag tag-teal"><?= $propertie['title'] ?></span>
-                </div>
-            </div>
-        <!-- </a> -->
         <?php break; ?>
+        <?php } else { ?>
+                <div class="card_home">
+                    <a href="./index.php?action=displayFlatUpdate&id_property=<?= $propertie['id_property'] ?>" method="post">
+                        <div class="card_header">
+                            <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+                        </div>
+                        <div class="card_body_home">
+                            <span class="tag tag-teal"><?= $propertie['title'] ?></span>
+                        </div>
+                    </a>
+                </div>
+        <?php break; ?>
+        <?php } ?>
     <?php } ?>
     <?php } ?>
 

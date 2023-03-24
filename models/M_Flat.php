@@ -4,6 +4,12 @@ require_once 'models/model.php';
 
 class Flat extends Model {
    
+    public function get_FlatAllInfo($id_property) {
+        $sql = 'SELECT * FROM property INNER JOIN flat ON flat.id_property = property.id_property WHERE property.id_property = ?;';
+        $result = $this->executeRequest($sql, array($id_property));
+        return $result;
+    }
+
     public function get_Flat() {
         $sql = "SELECT * FROM property INNER JOIN flat ON flat.id_property = property.id_property;";
         $result = $this->executeRequest($sql);
