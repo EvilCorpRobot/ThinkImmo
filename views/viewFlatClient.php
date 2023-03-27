@@ -23,11 +23,11 @@ $this->titre = "Description Flat Client";
 
                 <label for="title"><?= $flatAllInfo[0]['title']; ?></label><br>
 
-                <!-- <div>
+                <div>
                     <img src="https://placehold.it/480x430" alt="Image 1">
-                    <img src="https://placehold.it/480x430" alt="Image 1">
-                    <img src="https://placehold.it/480x430" alt="Image 1">
-                </div>-->
+                   <!--  <img src="https://placehold.it/480x430" alt="Image 1">
+                    <img src="https://placehold.it/480x430" alt="Image 1">-->
+                </div>
 
                 <label for="address"><?= $flatAllInfo[0]['address']; ?></label><br>
                 <span class="info"></span>
@@ -51,7 +51,7 @@ $this->titre = "Description Flat Client";
                 </div>
             </div>
             <!-- --- -->
-            <div class="flat_area_1">
+            <div class="flat_area_2">
                 <div>
                     <label for="epd"><?= $flatAllInfo[0]['epd']; ?></label>
                     <span class="info"></span>
@@ -69,7 +69,7 @@ $this->titre = "Description Flat Client";
             </div>
 
             <!-- --- -->
-            <div class="flat_area_1">
+            <div class="flat_area_3">
                 <div>
                     <label for="exterior"><?= $flatAllInfo[0]['exterior']; ?></label>
                     <span class="info"></span>
@@ -84,7 +84,7 @@ $this->titre = "Description Flat Client";
                 </div>
             </div>
             <!-- --- -->
-            <div class="flat_area_1">
+            <div class="flat_area_4">
 
                 <div>
                     <label for="price"><?= $flatAllInfo[0]['price']; ?></label>

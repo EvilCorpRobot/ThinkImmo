@@ -1,40 +1,133 @@
+.house_create_container {
+  background-color: #faf1ed;
+}
 
 .form_house_create {
-    background-color: #faf1ed;
     padding-left: 40px;
     margin:auto;
     width: 50%;
     padding-top: 20px;
     padding-bottom : 20px;
   }
-  
-  .form_house_create input, textarea {
+  .house_area {
+    margin-left:35px;
+  }
+  .form_house_create .contract {
+    color: #ff5d5d;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .form_house_create .title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .form_house_create .description {
+    color:#ff5d5d;
+    font-weight: 600;
+  }
+  .form_house_create span, textarea {
     border-radius : 25.5px;
+  }
+  .form_house_create label {
+    font-weight: 600;
   }
   .form_house_create textarea {
     width: 95%;
     height: 225px;
+    border: none;
+    background-color: #faf1ed;
+    padding: 20px;
   }
-  .house_area {
-    margin-left:35px;
-  }
-  .house_area_1 div {
+  .house_area_1, .house_area_2, .house_area_3, .house_area_4, .house_area_5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    margin-bottom: 40px;
+}
+
+.house_area_1 > div,
+.house_area_2 > div,
+.house_area_3 > div,
+.house_area_4 > div,
+.house_area_5 > div {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.house_area_1 label,
+.house_area_2 label,
+.house_area_3 label,
+.house_area_4 label,
+.house_area_5 label {
+    grid-row: 1 / 2;
+    margin-bottom: 5px;
+}
+
+.house_area_1 span,
+.house_area_2 span,
+.house_area_3 span,
+.house_area_4 span,
+.house_area_5 span {
+    grid-row: 2 / 3;
+}
+
+  /* .house_area_1 div {
     display: inline-block;
-    vertical-align: top;
-    margin-right: 40px; 
-    padding-left: 35px;
+    padding-left: 135px;
   }
-  
-  .house_area_1 label {
+  .house_area_2 div {
+    display: inline-block;
+    padding-left: 135px;
+  }
+  .house_area_3 div {
+    display: inline-block;
+    padding-left: 135px;
+  }
+  .house_area_4 div {
+    display: inline-block;
+    padding-left: 135px;
+  }
+  .house_area_5 div {
+    display: inline-block;
+    padding-left: 135px;
+  }
+  .house_area_6 div {
+    display: inline-block;
+    padding-left: 135px;
+  }
+   */
+  /* .house_area_1 label {
+    text-align: center;
     display: block;
     margin-bottom: 5px; 
   }
-  
-  
-  .create_house_btn {
-    padding: 0 20px;
-    margin-top:30px;
-    margin-left:187px;
+  .house_area_2 label {
+    display: block;
+    margin-bottom: 5px; 
   }
+  .house_area_3 label {
+    display: block;
+    margin-bottom: 5px; 
+  }
+  .house_area_4 label {
+    display: block;
+    margin-bottom: 5px; 
+  }
+  .house_area_5 label {
+    display: block;
+    margin-bottom: 5px; 
+  }
+  .house_area_6 label {
+    display: block;
+    margin-bottom: 5px; 
+  } */
   
+  #price {
+    font-size: 2rem;
+    font-weight: 800;
+  }
   
