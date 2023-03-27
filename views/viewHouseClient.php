@@ -8,7 +8,7 @@ echo $idProperty;
 
 <?php
 
-$this->titre = "House";
+    $this->titre = "Description House Client";
 
 ?>
 

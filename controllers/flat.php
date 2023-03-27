@@ -14,15 +14,26 @@ class ControllerFlat extends ControllerProperty {
     }
 
     //affiche vue Description Flat Client
-    public function displayFlatClient() {
+    public function displayFlatClient() 
+    {
+        $idProperty = $_GET['id_property'];
+        // echo $idProperty;
+
+        $flatAllInfo = $this->flat->get_FlatAllInfo($idProperty);
+
         $vue = new View("FlatClient");
-        $vue->generer(["error", "error"]);
-        // index.php?action=displayFlatClient
+        $vue->generer(["flatAllInfo" => $flatAllInfo]);
     }
 
     //affiche vue Description Flat DashBoard
     public function displayFlatDashboard() {
-        
+        $idProperty = $_GET['id_property'];
+        // echo $idProperty;
+
+        $flatAllInfo = $this->flat->get_FlatAllInfo($idProperty);
+
+        $vue = new View("FlatDash");
+        $vue->generer(["flatAllInfo" => $flatAllInfo]);
     }
 
     //affiche vue Creation d'appartement
@@ -33,7 +44,9 @@ class ControllerFlat extends ControllerProperty {
 
     //affiche vue Modification d'appartement
     public function displayFlatUpdate() {
-        $flatInfo = $this->getFlat();
+        $idProperty = $_GET["id_property"];
+
+        $flatInfo = $this->flat->get_FlatAllInfo($idProperty);
 
         $vue = new View("Flat_Update");
         $vue->generer(['flatInfo' => $flatInfo]);
@@ -83,7 +96,7 @@ class ControllerFlat extends ControllerProperty {
     //met a jour en Bdd un appartement
     public function updateFlat() {
                     
-        $flatId = 4;
+        $flatId = $_GET["id_property"];
 
         if(isset($_POST)) {
 
