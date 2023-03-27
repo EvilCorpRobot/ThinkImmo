@@ -2,7 +2,7 @@
 
     $this->titre = "Mofification Maison";
 
-?>
+?> 
 
 <?php
 

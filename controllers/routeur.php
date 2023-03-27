@@ -111,5 +111,4 @@ class Routeur {
         $vue = new View("Erreur");
         $vue->generer(array('msgErreur' => $msgErreur));
     }
-
 }
