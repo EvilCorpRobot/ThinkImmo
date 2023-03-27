@@ -434,6 +434,9 @@
     height: 200px;
     object-fit: cover;
   }
+  .card__body:hover {
+    background-color: orange;
+  }
   .card_body_home {
     display: flex;
     flex-direction: column;
@@ -457,3 +460,9 @@
     background-color: #47bcd4;
   }
   
+  #dashboard_title {
+    color: #000;
+    font-size: calc(1em + 5vw);
+    font-weight: 900;
+    text-shadow: -0.0075em 0.0075em 0 #f2f2f2, 0.005em 0.005em 0 #c1c1c1, 0.01em 0.01em 0 #c4c4c4, 0.015em 0.015em #c7c7c7, 0.02em 0.02em 0 #cacaca, 0.025em 0.025em 0 #cdcdcd, 0.03em 0.03em 0 #d0d0d0, 0.035em 0.035em 0 #d3d3d3;
+    }
