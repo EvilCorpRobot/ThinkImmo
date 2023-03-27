@@ -16,18 +16,33 @@
     <header>
         <div class="navbar">
 
-            <div class="logo">
-                <img src="./assets/logo_transp.png" alt="logo de thinkimmo">
-                <h2>Thinkimmo</h2>
-            </div>
+            <?php if(!isset($_SESSION['id'])) { ?>
+            <a href="./index.php?">
+                    <div class="logo">
+                        <img src="./assets/logo_transp.png" alt="logo de thinkimmo">
+                        <h2>Thinkimmo</h2>
+                    </div>
+            </a>
+            <?php } else { ?>
+            <a href="./index.php?action=displayDashHome">
+                    <div class="logo">
+                        <img src="./assets/logo_transp.png" alt="logo de thinkimmo">
+                        <h2>Thinkimmo</h2>
+                    </div>
+            </a>
+            <?php } ?>
 
-            <a href="#" class="action_btn">Connexion</a>
+            <?php if(!isset($_SESSION['auth']['id'])) { ?>
+            <a href="./index.php?action=displayLogin" class="action_btn">Connexion</a>
+            <?php } else { ?>
+            <a href="./index.php?action=adminLogout" class="action_btn">Deconnexion</a>
+            <?php } ?>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         <div class="dropdown_menu">
-            <li><a href="#" class="action_btn">Se connecter</a></li>
+            <li><a href="./index.php?action=displayLogin" class="action_btn">Se connecter</a></li>
         </div>
     </header>
 
