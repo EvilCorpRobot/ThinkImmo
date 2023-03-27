@@ -89,9 +89,17 @@ class ControllerHouse extends ControllerProperty
             $outbuilding = $_POST['outbuilding'];
             $price = $_POST['price'];
 
-            $result = $this->house->add_House( $contract, $title, $address, $description, $type, $area, $charge, $rooms,
-                                                 $epd, $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding);
-
+            $result = $this->house->add_House( $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding);
+            
+            
+            $extension = pathinfo($_FILES['picture1']['name'], PATHINFO_EXTENSION);
+            $newFileName = "propriete_" . $result . "_1." . $extension;
+            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            mkdir($uploadFileDir);
+            move_uploaded_file($_FILES['picture1']['tmp_name'], $uploadFileDir . $newFileName);
+            
+            
+            
             $this->displayDashHome();
         }
     }

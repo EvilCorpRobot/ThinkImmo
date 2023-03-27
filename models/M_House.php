@@ -21,12 +21,15 @@ class House extends Model {
         $sql = "INSERT INTO property (contract, title, address, description, type, area, charge, rooms, epd, kitchen, parking, exterior, price)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
-                INSERT INTO house (id_property, pool, landArea, floor, outbuilding)
-                VALUES (LAST_INSERT_ID(), ?, ?, ?, ?);";
-        $result = $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
-                                        $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding));
+                ";
+        $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+        $kitchen, $parking, $exterior, $price));
+        $id = $this->getBdd()->lastInsertId();
+        $sql2 = "INSERT INTO house (id_property, pool, landArea, floor, outbuilding)
+        VALUES (LAST_INSERT_ID(), ?, ?, ?, ?);";
+        $this->executeRequest($sql2, array($pool, $landArea, $floor, $outbuilding));
         
-        return $result;
+        return $id;
     }
     
     public function update_House(   $houseId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
