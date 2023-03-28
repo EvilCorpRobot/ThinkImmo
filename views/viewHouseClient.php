@@ -25,11 +25,11 @@ $this->titre = "Description House Client";
 
                 <div class="grid-container">
                     <div class="grid-item">
-                        <img src="<?= $houseAllPictures[0]['path']?>" alt="Image 1">
+                        <img src="<?= $houseAllPictures[0]['path']?>" alt="Image 1" class="image_1 popup-trigger">
                     </div>
                     <div class="grid-item">
-                        <img src="<?= $houseAllPictures[1]['path']?>" alt="Image 2">
-                        <img src="<?= $houseAllPictures[2]['path']?>" alt="Image 3">
+                        <img src="<?= $houseAllPictures[1]['path']?>" alt="Image 2" class="image_2 popup-trigger">
+                        <img src="<?= $houseAllPictures[2]['path']?>" alt="Image 3" class="image_3 popup-trigger">
                     </div>
                 </div>
 
@@ -109,3 +109,36 @@ $this->titre = "Description House Client";
         </form>
     </div>
 </div>
+
+<div class="popup-container">
+  <img class="popup-image" src="">
+</div>
+<script>
+// Récupérer toutes les images avec la classe "popup-trigger"
+const popupTriggers = document.querySelectorAll('.popup-trigger');
+
+// Ajouter un événement "onclick" à chaque image
+popupTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    // Récupérer l'URL de l'image cliquée
+    const imageUrl = trigger.src;
+    // Récupérer la pop-up et l'image à l'intérieur
+    const popupContainer = document.querySelector('.popup-container');
+    const popupImage = document.querySelector('.popup-image');
+    // Afficher la pop-up et définir l'URL de l'image à l'intérieur
+    popupImage.src = imageUrl;
+    popupContainer.style.display = 'block';
+  });
+});
+
+// Ajouter un événement "onclick" pour cacher la pop-up lorsque l'utilisateur clique à l'extérieur de l'image
+const popupContainer = document.querySelector('.popup-container');
+popupContainer.addEventListener('click', () => {
+  popupContainer.style.display = 'none';
+});
+</script>
+<?php
+
+    var_dump($houseAllPictures);
+
+?>
