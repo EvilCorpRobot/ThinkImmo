@@ -42,8 +42,11 @@ class Routeur {
                     if($_GET['action'] == 'displayDashHome') {
                         $this->ctrlProperty->displayDashHome();
                     } else
-                    if ($_GET["action"] == "filterProperty") {
-                        $this->ctrlProperty->filterProperty();
+                    if ($_GET["action"] == "filterPropertyClient") {
+                        $this->ctrlProperty->filterPropertyClient();
+                    } else
+                    if ($_GET["action"] == "filterPropertyDash") {
+                        $this->ctrlProperty->filterPropertyDash();
                     } else
                     if($_GET['action'] == 'getPicture') {
                         $this->ctrlPictures->getPicture();

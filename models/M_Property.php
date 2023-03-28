@@ -11,9 +11,9 @@ class Property extends Model {
     }
 
     public function getPropertiesByFilter($purchase=null, $rent=null, $house=null, $flat=null, $bedroom=null, $area=null, $priceMin=null, $priceMax=null, $location=null) {
-        $sql = "SELECT id_property, title FROM property WHERE ";
+        $sql = "SELECT id_property, title, type FROM property WHERE ";
         $sql2 = "";
-        if ($purchase != null || $rent != null || $house != null || $flat != null || $bedroom != null || $area != null || $priceMin != null || $priceMax != null) {
+        if ($purchase != null || $rent != null || $house != null || $flat != null) {
             if ($purchase) {
                 $sql2 .= "contract='Achat'";
                 $sql2 .= " OR ";
@@ -30,23 +30,22 @@ class Property extends Model {
                 $sql2 .= "type='Appartement'";
                 $sql2 .= " OR ";
             }
-            if ($bedroom != null) {
-                $sql2 .= "pieces=" . $bedroom;
-                $sql2 .= " OR ";
-            }
-            if ($area != null) {
-                $sql2 .= "area<=" . $area;
-                $sql2 .= " OR ";
-            }
-            if ($priceMin != null || $priceMax != null) {
-                $sql2 .= "price BETWEEN " . $priceMin . " AND " . $priceMax;
-                $sql2 .= " OR ";
-            }
+            $sql2 = substr($sql2, 0, -4);
+            $sql2 .= " AND ";
         }
-        if ($location != null) {
-
+        
+        if ($bedroom != null) {
+            $sql2 .= "rooms=" . $bedroom;
+            $sql2 .= " AND ";
         }
-        $sql2 = substr($sql2, 0, -4);
-        echo $sql . $sql2;
+        if ($area != null) {
+            $sql2 .= "area<=" . $area;
+            $sql2 .= " AND ";
+        }
+        if ($priceMin != null || $priceMax != null) {
+            $sql2 .= "price BETWEEN " . $priceMin . " AND " . $priceMax;
+        }
+        $sql = $sql . $sql2;
+        return $this->executeRequest($sql);
     }
 }

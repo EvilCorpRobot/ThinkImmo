@@ -44,7 +44,7 @@ class ControllerProperty {
         }
     }
 
-    public function filterProperty() {
+    public function filterPropertyClient() {
         $purchase = null;
         $rent = null;
         $house = null;
@@ -63,6 +63,42 @@ class ControllerProperty {
             $flat = true;
         }
 
-        $this->property->getPropertiesByFilter($purchase, $rent, $house, $flat, $_POST["room"], $_POST["area"], $_POST["pricemin"], $_POST["pricemax"], $_POST["location"]);
+        $results = $this->property->getPropertiesByFilter($purchase, $rent, $house, $flat, $_POST["room"], $_POST["area"], $_POST["pricemin"], $_POST["pricemax"], $_POST["location"]);
+        $ids = array();
+        foreach ($results as $result) {
+            $ids[] = $result["id_property"];
+        }
+        $pictures = $this->pictures->getFirstPicturesByIds($ids);
+        $vue = new View("ClientHome");
+        $vue->generer(["properties" => $results, "pictures" => $pictures]);
+    }
+
+    public function filterPropertyDash() {
+        $purchase = null;
+        $rent = null;
+        $house = null;
+        $flat = null;
+        
+        if (isset($_POST["purchase"]) && $_POST["purchase"] == "on") {
+            $purchase = true;
+        }
+        if (isset($_POST["rent"]) && $_POST["rent"] == "on") {
+            $rent = true;
+        }
+        if (isset($_POST["house"]) && $_POST["house"] == "on") {
+            $house = true;
+        }
+        if (isset($_POST["flat"]) && $_POST["flat"] == "on") {
+            $flat = true;
+        }
+
+        $results = $this->property->getPropertiesByFilter($purchase, $rent, $house, $flat, $_POST["room"], $_POST["area"], $_POST["pricemin"], $_POST["pricemax"], $_POST["location"]);
+        $ids = array();
+        foreach ($results as $result) {
+            $ids[] = $result["id_property"];
+        }
+        $pictures = $this->pictures->getFirstPicturesByIds($ids);
+        $vue = new View("DashHome");
+        $vue->generer(["properties" => $results, "pictures" => $pictures]);
     }
 }
