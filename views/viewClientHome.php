@@ -8,7 +8,7 @@ $this->titre = "Accueil";
 <link rel="stylesheet" href="./views/styles/clientHome.css">
 <main class="home_container">
     <img class="home_container_img" src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
-    <form>
+    <form action="./index.php?action=filterPropertyClient" method="post">
 
         <div class="grid_container">
             <div class="grid">

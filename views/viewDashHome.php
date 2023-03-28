@@ -10,12 +10,12 @@ $this->titre = "DashBoard";
 
 <main class="home_container">
     <img class="home_container_img" src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
-    <form>
+ <form action="./index.php?action=filterPropertyDash" method="post">
 
         <div class="grid_container">
             <div class="grid">
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="purchase" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/euro.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -28,7 +28,7 @@ $this->titre = "DashBoard";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="location"  type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/clé.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -41,7 +41,7 @@ $this->titre = "DashBoard";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="house"  type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/house.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -53,7 +53,7 @@ $this->titre = "DashBoard";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="flat"  type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/immeuble.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -96,8 +96,6 @@ $this->titre = "DashBoard";
     </form>
 
     <p id="dashboard_title">Dashboard</p>
-    <a href="./index.php?action=displayHouseCreate">
-    
 
     <div class="wrapper">
         <div class="modal_btn">
@@ -116,17 +114,17 @@ $this->titre = "DashBoard";
                 </div>
                 <div class="modal_footer">
                     <div class="modal_btn_grp">
-                        <div class="btn btn_cancel">Maison</div>
+                        <a href="./index.php?action=displayHouseCreate">
+                            <div class="btn btn_cancel">Maison</div>
+                        </a>
+                        <a href="./index.php?action=displayFlatCreate">
                         <div class="btn btn_confirm">Appartement</div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </a>
-    <a href="./index.php?action=displayFlatCreate">
-        <button class="action_btn">Créer un nouveau appartement</button>
-    </a>
 
     <div class="container_card_home">
         <?php $i = 0;?>
