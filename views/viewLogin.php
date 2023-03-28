@@ -11,9 +11,9 @@
                                                                                         }
                                                                                             ?>
                 <label>EMAIL</label>
-                <input type="email" placeholder="example@test.com" />
+                <input type="email" name="email" placeholder="example@test.com" />
                 <label>Mot de passe</label>
-                <input type="password" placeholder="Min 6 charaters long" />
+                <input type="password" name="password" placeholder="Min 6 charaters long" />
                 <input class="btn_form_login" type="submit" value="Se connecter"></input>
             </form>
         </div>

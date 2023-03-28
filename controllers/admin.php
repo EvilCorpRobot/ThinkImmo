@@ -21,6 +21,7 @@ class ControllerAdmin {
         if($id) {
             session_start();
             $_SESSION["auth"]["id"] = $id;
+            echo "hello";
         } else {
             $loginView = new View("Login");
             $loginView->generer(["error" => true]);

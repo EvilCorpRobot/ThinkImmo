@@ -8,12 +8,12 @@ $this->titre = "Accueil";
 <link rel="stylesheet" href="./views/styles/clientHome.css">
 <main class="container">
  <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
-    <form>
+    <form action="/index.php?action=filterProperty" method="post">
    
         <div class="grid_container">
             <div class="grid">
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="purchase" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/euro.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -26,7 +26,7 @@ $this->titre = "Accueil";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="rent" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/clé.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -39,7 +39,7 @@ $this->titre = "Accueil";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="house" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/house.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -51,7 +51,7 @@ $this->titre = "Accueil";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="flat" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/immeuble.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
