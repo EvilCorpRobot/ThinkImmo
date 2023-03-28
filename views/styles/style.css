@@ -16,9 +16,7 @@
     color:#000;
     font-size: 1rem;
 }
-.navbar a:hover {
-    color: orange;
-}
+
 /* HEADER */
 header {
     position: relative;
@@ -71,12 +69,15 @@ header {
 }
 .action_btn:hover {
     scale:1.05;
-    color:#000;
+    background-color: #000;
+    color:orange;
     -webkit-transition: background-color 0.2s;
     transition: scale 0.2 ease;
+    
 }
 .action_btn:active {
     scale:0.95;
+    color: #000;
 }
 
 /* DROPDOWN MENU */

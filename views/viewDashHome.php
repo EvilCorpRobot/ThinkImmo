@@ -8,94 +8,100 @@ $this->titre = "DashBoard";
 <link rel="stylesheet" href="./views/styles/clientHome.css">
 
 
-<main class="container">
- <img src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
-    <form>
-   
-        <div class="grid_container">
-            <div class="grid">
-                <label class="card">
-                    <input class="card__input" type="checkbox" />
-                    <div class="card__body">
-                        <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/euro.jpg" /><span class="card__body-cover-checkbox">
-                                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
-                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                </svg></span></div>
-                        <header class="card__body-header">
-                            <h2 class="card__body-header-title">Vente</h2>
-                         
-                        </header>
-                    </div>
-                </label>
-                <label class="card">
-                    <input class="card__input" type="checkbox" />
-                    <div class="card__body">
-                        <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/clé.jpg" /><span class="card__body-cover-checkbox">
-                                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
-                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                </svg></span></div>
-                        <header class="card__body-header">
-                            <h2 class="card__body-header-title">Location</h2>
+<main class="home_container">
+    <img class="home_container_img" src="./assets/ThinkImmoBackgroundImage.jpg" alt="dessin immobilier">
+ <form>
 
-                        </header>
-                    </div>
-                </label>
-                <label class="card">
-                    <input class="card__input" type="checkbox" />
-                    <div class="card__body">
-                        <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/house.jpg" /><span class="card__body-cover-checkbox">
-                                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
-                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                </svg></span></div>
-                        <header class="card__body-header">
-                            <h2 class="card__body-header-title">Maison</h2>
-                        </header>
-                    </div>
-                </label>
-                <label class="card">
-                    <input class="card__input" type="checkbox" />
-                    <div class="card__body">
-                        <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/immeuble.jpg" /><span class="card__body-cover-checkbox">
-                                <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
-                                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                                </svg></span></div>
-                        <header class="card__body-header">
-                            <h2 class="card__body-header-title">Appartement</h2>
-                        </header>
-                    </div>
-                </label>
+<div class="grid_container">
+    <div class="grid">
+        <label class="card">
+            <input class="card__input" type="checkbox" />
+            <div class="card__body">
+                <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/euro.jpg" /><span class="card__body-cover-checkbox">
+                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg></span></div>
+                <header class="card__body-header">
+                    <h2 class="card__body-header-title">Vente</h2>
 
+                </header>
             </div>
-            <div class="input">
-                <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Nombre de chambres" name="room" id='room' required />
-                    <label for="room" class="form__label">Nombre de chambres</label>
-                </div>
-                <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Superficie" name="area" id='area' required />
-                    <label for="area" class="form__label">Superficie</label>
-                </div>
-                <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Prix minimum" name="pricemin" id='pricemin' required />
-                    <label for="pricemin" class="form__label">Prix minimum</label>
-                </div>
-                <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Prix maximum" name="pricemax" id='pricemax' required />
-                    <label for="pricemax" class="form__label">Prix maximum</label>
-                </div>
-                <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Localisation" name="location" id='location' required />
-                    <label for="location" class="form__label">Localisation</label>
-                </div>
+        </label>
+        <label class="card">
+            <input class="card__input" type="checkbox" />
+            <div class="card__body">
+                <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/clé.jpg" /><span class="card__body-cover-checkbox">
+                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg></span></div>
+                <header class="card__body-header">
+                    <h2 class="card__body-header-title">Location</h2>
+
+                </header>
             </div>
+        </label>
+        <label class="card">
+            <input class="card__input" type="checkbox" />
+            <div class="card__body">
+                <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/house.jpg" /><span class="card__body-cover-checkbox">
+                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg></span></div>
+                <header class="card__body-header">
+                    <h2 class="card__body-header-title">Maison</h2>
+                </header>
+            </div>
+        </label>
+        <label class="card">
+            <input class="card__input" type="checkbox" />
+            <div class="card__body">
+                <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/immeuble.jpg" /><span class="card__body-cover-checkbox">
+                        <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg></span></div>
+                <header class="card__body-header">
+                    <h2 class="card__body-header-title">Appartement</h2>
+                </header>
+            </div>
+        </label>
 
-            <button class="button_choice" type="submit">Valider mes choix</button>
-
-
+    </div>
+    <div class="input">
+        <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Nombre de chambres" name="room" id='room' required />
+            <label for="room" class="form__label">Nombre de chambres</label>
         </div>
-    </form>
+        <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Superficie" name="area" id='area' required />
+            <label for="area" class="form__label">Superficie</label>
+        </div>
+        <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Prix minimum" name="pricemin" id='pricemin' required />
+            <label for="pricemin" class="form__label">Prix minimum</label>
+        </div>
+        <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Prix maximum" name="pricemax" id='pricemax' required />
+            <label for="pricemax" class="form__label">Prix maximum</label>
+        </div>
+        <div class="form__group field">
+            <input type="input" class="form__field" placeholder="Localisation" name="location" id='location' required />
+            <label for="location" class="form__label">Localisation</label>
+        </div>
+    </div>
 
-    <p>Dashboard</p>
+    <button class="button_choice" type="submit">Valider mes choix</button>
+
+
+</div>
+</form>
+
+    <p id="dashboard_title">Dashboard</p>
+    <a href="./index.php?action=displayHouseCreate">
+        <button class="action_btn">Créer un nouveau bien immobilier</button>
+    </a>
+    <a href="./index.php?action=displayFlatCreate">
+        <button class="action_btn">Créer un nouveau appartement</button>
+    </a>
 
     <div class="container_card_home">
     <?php foreach($properties as $propertie) {?>

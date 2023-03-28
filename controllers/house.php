@@ -43,32 +43,46 @@ class ControllerHouse extends ControllerProperty
     //affiche vue Creation de maison
     public function displayHouseCreate()
     {
-        $vue = new View("House_Create");
-        $vue->generer(["error" => "error"]);
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $vue = new View("House_Create");
+            $vue->generer(["error" => "error"]);
+        }
     }
 
     //affiche vue Modification de maison
     public function displayHouseUpdate()
     {
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
         $idProperty = $_GET['id_property'];
 
         $houseAllInfo = $this->house->get_HouseAllInfo($idProperty);
 
         $vue = new View("House_Update");
         $vue->generer(["houseInfo" => $houseAllInfo]);
+        }
     }
 
     //recupere en Bdd une maison
     public function getHouse()
     {
-        $houseInfo = $this->house->get_House();
-        return $houseInfo;
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $houseInfo = $this->house->get_House();
+            return $houseInfo;
+        }
     }
 
     //ajoute en Bdd une maison
-    public function addHouse()
+    public function addHouse() 
     {
-
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
         if (isset($_POST)) {
 
             // print_r($_POST);
@@ -119,18 +133,31 @@ class ControllerHouse extends ControllerProperty
             $this->pictures->addPictures($result, $uploadFileDir . $newFileName);
             
             $this->displayDashHome();
+            }
         }
     }
 
     //suprime en Bdd une maison
     public function deleteHouse()
     {
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $houseId = $_GET['id_property'];
 
+            echo $houseId;
+
+            $result = $this->house->delete_House($houseId);
+            $this->displayDashHome();
+        }
     }
 
     //met a jour en Bdd une maison
     public function updateHouse()
     {
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
         $houseId = $_GET['id_property'];
             
         if(isset($_POST)) {

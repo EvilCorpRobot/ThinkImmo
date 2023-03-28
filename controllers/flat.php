@@ -41,30 +41,45 @@ class ControllerFlat extends ControllerProperty {
 
     //affiche vue Creation d'appartement
     public function displayFlatCreate() {
-        $vue = new View('Flat_Create');
-        $vue->generer(["error" => "error"]);
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $vue = new View('Flat_Create');
+            $vue->generer(["error" => "error"]);
+        }
     }
 
     //affiche vue Modification d'appartement
     public function displayFlatUpdate() {
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
         $idProperty = $_GET["id_property"];
 
         $flatInfo = $this->flat->get_FlatAllInfo($idProperty);
 
         $vue = new View("Flat_Update");
         $vue->generer(['flatInfo' => $flatInfo]);
+        }
     }
 
 
     //recupere en Bdd un appartement
     public function getFlat() {
-        $flatInfo = $this->flat->get_Flat();
-        return $flatInfo;
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {  
+            $flatInfo = $this->flat->get_Flat();
+            return $flatInfo;
+        }
     }
 
     //ajoute en Bdd un appartement
     public function addFlat() {
-       
+    
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
         if(isset($_POST)) {
 
             $contract = $_POST['contract'];
@@ -111,17 +126,30 @@ class ControllerFlat extends ControllerProperty {
             
             
             $this->displayDashHome();
+            }
         }
     }
 
     //supprime en Bdd un appartement
     public function deleteFlat() {
-        
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $flatId = $_GET['id_property'];
+
+            echo $flatId;
+
+            $result = $this->flat->delete_Flat($flatId);
+            $this->displayDashHome();
+        }
     }
 
     //met a jour en Bdd un appartement
     public function updateFlat() {
-                    
+    
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
         $flatId = $_GET["id_property"];
 
         if(isset($_POST)) {
@@ -172,5 +200,6 @@ class ControllerFlat extends ControllerProperty {
             $this->pictures->updatePictures($result, $uploadFileDir . $newFileName);
         }
         $this->displayDashHome();
+        }
     }
 }
