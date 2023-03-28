@@ -23,10 +23,10 @@ class ControllerFlat extends ControllerProperty {
         // echo $idProperty;
 
         $flatAllInfo = $this->flat->get_FlatAllInfo($idProperty);
+        $flatAllPictures = $this->pictures->get_PropertyAllPictures($idProperty);
 
         $vue = new View("FlatClient");
-        var_dump($flatAllInfo);
-        $vue->generer(["flatAllInfo" => $flatAllInfo]);
+        $vue->generer(["flatAllInfo" => $flatAllInfo, "flatAllPictures" => $flatAllPictures]);
     }
 
     //affiche vue Description Flat DashBoard

@@ -2,7 +2,7 @@
 
 $idProperty = $_GET['id_property'];
 
-echo $idProperty;
+// echo $idProperty;
 
 ?>
 
@@ -25,11 +25,11 @@ $this->titre = "Description Flat Client";
 
                 <div class="grid-container">
                     <div class="grid-item">
-                        <img src="https://placehold.it/480x430" alt="Image 1">
+                        <img src="<?= $flatAllPictures[0]['path']?>" alt="Image 1">
                     </div>
                     <div class="grid-item">
-                        <img src="https://placehold.it/480x215" alt="Image 2">
-                        <img src="https://placehold.it/480x215" alt="Image 3">
+                        <img src="<?= $flatAllPictures[1]['path']?>" alt="Image 2">
+                        <img src="<?= $flatAllPictures[2]['path']?>" alt="Image 3">
                     </div>
                 </div>
 
