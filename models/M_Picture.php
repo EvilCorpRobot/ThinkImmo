@@ -10,7 +10,22 @@ class Picture extends Model {
                 GROUP BY id_property';
         $firstPictures = $this->executeRequest($sql);
         return $firstPictures;
-    } 
+    }
+    
+    public function getFirstPicturesByIds($ids) {
+        $sql2 = "";
+        foreach ($ids as $id) {
+            $sql2 .= "id_property=? OR ";
+        }
+        $sql2 = substr($sql2, 0, -3);
+        $sql = 'SELECT id_property, MIN(path) AS first_url
+                FROM image
+                WHERE '. $sql2 .'
+                GROUP BY id_property';
+
+        $firstPictures = $this->executeRequest($sql, $ids);
+        return $firstPictures;
+    }
 
     public function get_PropertyAllPictures($id_property) {
         $sql = 'SELECT * FROM image WHERE id_property = ?; ';
