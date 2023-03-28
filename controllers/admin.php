@@ -15,8 +15,12 @@ class ControllerAdmin extends ControllerProperty {
 
     //affiche la page login
     public function displayLogin() {
+        if (isset($_SESSION["auth"]["id"])) {
+            $this->displayDashHome(); 
+        } else {
         $loginView = new View("Login");
         $loginView->generer(["error" => false]);
+        }
     }
 
     public function adminLogin() {

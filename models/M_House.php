@@ -29,6 +29,13 @@ class House extends Model {
         return $result;
     }
     
+    public function delete_House($houseId) {
+        $sql = 'DELETE FROM `property` WHERE id_property = ?;';
+
+        $result = $this->executeRequest($sql, array($houseId));
+    }
+
+
     public function update_House(   $houseId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
                                     $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding) {
         
