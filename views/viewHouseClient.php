@@ -137,8 +137,8 @@ popupContainer.addEventListener('click', () => {
   popupContainer.style.display = 'none';
 });
 </script>
-<?php
+<!-- <?php
 
     var_dump($houseAllPictures);
 
-?>
+?> -->
