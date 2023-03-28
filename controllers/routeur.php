@@ -33,6 +33,9 @@ class Routeur {
                     if($_GET['action'] == 'adminLogin') {
                         $this->ctrlAdmin->adminLogin();
                     } else
+                    if($_GET['action'] == 'adminLogout') {
+                        $this->ctrlAdmin->adminLogout();
+                    } else
                     if($_GET['action'] == 'displayClientResult') {
                         $this->ctrlProperty->displayClientResult();
                     } else
@@ -114,5 +117,4 @@ class Routeur {
         $vue = new View("Erreur");
         $vue->generer(array('msgErreur' => $msgErreur));
     }
-
 }

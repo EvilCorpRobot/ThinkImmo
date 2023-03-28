@@ -5,7 +5,7 @@
         <div class="brand-logo"><img src="./assets/logo_transp.png" alt=""></div>
         <div class="brand-title">Thinkimmo</div>
         <div class="inputs">
-            <form action="/index.php?action=adminLogin" method="post">
+            <form action="./index.php?action=adminLogin" method="post">
                 <?php if ($error == true) {
                 ?> <label for="error" class="error">Email ou mot de passe incorect</label> <?php
                                                                                         }

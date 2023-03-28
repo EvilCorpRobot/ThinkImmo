@@ -1,14 +1,14 @@
-<?php 
+<?php
 
-    $idProperty = $_GET['id_property'];
+$idProperty = $_GET['id_property'];
 
-    echo $idProperty;
+echo $idProperty;
 
 ?>
 
 <?php
 
-    $this->titre = "Description House Client";
+$this->titre = "Description House Client";
 
 ?>
 
@@ -19,87 +19,91 @@
     <div class="form_house_create">
         <form action="" method="post">
             <div class="house_area">
-                <label for="contract"><?= $houseAllInfo[0]['contract'] ?></label><br>
+                <label for="contract" class="contract"><?= $houseAllInfo[0]['contract'] ?></label><br>
 
-                <label for="title"><?= $houseAllInfo[0]['title'] ?></label><br>
+                <label for="title" class="title"><?= $houseAllInfo[0]['title'] ?></label><br>
 
-                <!-- <div>
-                    <img src="https://placehold.it/480x430" alt="Image 1">
-                    <img src="https://placehold.it/480x430" alt="Image 1">
-                    <img src="https://placehold.it/480x430" alt="Image 1">
-                </div>-->
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="https://placehold.it/480x430" alt="Image 1">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://placehold.it/480x215" alt="Image 2">
+                        <img src="https://placehold.it/480x215" alt="Image 3">
+                    </div>
+                </div>
 
                 <label for="address"><?= $houseAllInfo[0]['address'] ?></label><br>
                 <span class="info"></span>
+                <div>
 
-                <label for="description">Description</label><br>
+                    <span class="info" id="price"><?= $houseAllInfo[0]['price'] ?> €</span>
+                </div>
+                <label for="description" class="description">Description</label><br>
                 <textarea name="description"><?= $houseAllInfo[0]['description'] ?></textarea><br>
             </div>
             <!-- --- -->
             <div class="house_area_1">
                 <div>
-                    <label for="area"><?= $houseAllInfo[0]['area'] ?></label>
-                    <span class="info"></span>
+                    <label for="area">Superficie</label>
+                    <span class="info"><?= $houseAllInfo[0]['area'] ?></span>
                 </div>
                 <div>
-                    <label for="charge"><?= $houseAllInfo[0]['charge'] ?></label>
-                    <span class="info"></span>
+                    <label for="charge">Charge</label>
+                    <span class="info"><?= $houseAllInfo[0]['charge'] ?></span>
                 </div>
                 <div>
-                    <label for="rooms"><?= $houseAllInfo[0]['rooms'] ?></label>
-                    <span class="info"></span>
+                    <label for="rooms">Nombre de chambres</label>
+                    <span class="info"><?= $houseAllInfo[0]['rooms'] ?></span>
                 </div>
             </div>
             <!-- --- -->
-            <div class="house_area_1">
+            <div class="house_area_2">
                 <div>
-                    <label for="epd"><?= $houseAllInfo[0]['epd'] ?></label>
-                    <span class="info"></span>
+                    <label for="epd">Classe énergétique</label>
+                    <span class="info"><?= $houseAllInfo[0]['epd'] ?></span>
                 </div>
                 <div>
 
-                    <label for="kitchen"><?= $houseAllInfo[0]['kitchen'] ?></label>
-                    <span class="info"></span>
+                    <label for="kitchen">Cuisine</label>
+                    <span class="info"><?= $houseAllInfo[0]['kitchen'] ?></span>
                 </div>
                 <div>
 
-                    <label for="parking"><?= $houseAllInfo[0]['parking'] ?></label>
-                    <span class="info"></span>
+                    <label for="parking">Parking</label>
+                    <span class="info"><?= $houseAllInfo[0]['parking'] ?></span>
                 </div>
             </div>
             <!-- --- -->
-            <div class="house_area_1">
+            <div class="house_area_3">
                 <div>
-                    <label for="exterior"><?= $houseAllInfo[0]['exterior'] ?></label>
-                    <span class="info"></span>
+                    <label for="exterior">Extérieur</label>
+                    <span class="info"><?= $houseAllInfo[0]['exterior'] ?></span>
                 </div>
                 <div>
-                    <label for="pool"><?= $houseAllInfo[0]['pool'] ?></label>
-                    <span class="info"></span>
+                    <label for="pool">Piscine</label>
+                    <span class="info"><?= $houseAllInfo[0]['pool'] ?></span>
                 </div>
                 <div>
-                    <label for="landArea"><?= $houseAllInfo[0]['landArea'] ?></label>
-                    <span class="info"></span>
-                </div>
-            </div>
-            <!-- --- -->
-            <div class="house_area_1">
-                <div>
-                    <label for="floor"><?= $houseAllInfo[0]['floor'] ?></label>
-                    <span class="info"></span>
-                </div>
-                <div>
-                    <label for="outbuilding"><?= $houseAllInfo[0]['outbuilding'] ?></label>
-                    <span class="info"></span>
+                    <label for="landArea">Surface du terrain</label>
+                    <span class="info"><?= $houseAllInfo[0]['landArea'] ?></span>
                 </div>
             </div>
             <!-- --- -->
-            <div class="house_area_1">
+            <div class="house_area_4">
+                <div>
+                    <label for="floor">Nombre de niveau</label>
+                    <span class="info"><?= $houseAllInfo[0]['floor'] ?></span>
+                </div>
+                <div>
+                    <label for="outbuilding">Dépendance</label>
+                    <span class="info"><?= $houseAllInfo[0]['outbuilding'] ?></span>
+                </div>
+            </div>
+            <!-- --- -->
+            <div class="house_area_5">
 
-                <div>
-                    <label for="price"><?= $houseAllInfo[0]['price'] ?></label>
-                    <span class="info"></span>
-                </div>
+
 
             </div>
         </form>
