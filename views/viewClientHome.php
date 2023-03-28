@@ -94,6 +94,8 @@ $this->titre = "Accueil";
     </form>
 
     <div class="container_card_home">
+    <?php $i = 0;
+    ?>
 
     <?php foreach($properties as $propertie) {?>
     <?php foreach($pictures as $picture) {?>
@@ -101,7 +103,7 @@ $this->titre = "Accueil";
                 <div class="card_home">
                     <a href="./index.php?action=displayHouseClient&id_property=<?= $propertie['id_property'] ?>" method="post">
                         <div class="card_header">
-                            <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+                            <img src="<?='.' . $pictures[$i]['first_url']?>" alt="Image 1">
                         </div>
                         <div class="card_body_home">
                             <span class="tag tag-teal"><?= $propertie['title'] ?></span>
@@ -113,7 +115,7 @@ $this->titre = "Accueil";
                 <div class="card_home">
                     <a href="./index.php?action=displayFlatClient&id_property=<?= $propertie['id_property'] ?>" method="post">
                         <div class="card_header">
-                            <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+                            <img src="<?='.' . $pictures[$i]['first_url']?>" alt="Image 1">
                         </div>
                         <div class="card_body_home">
                             <span class="tag tag-teal"><?= $propertie['title'] ?></span>
@@ -122,7 +124,7 @@ $this->titre = "Accueil";
                 </div>
         <?php break; ?>
         <?php } ?>
-    <?php } ?>
+    <?php } $i++; ?>
     <?php } ?>
 
     </div>

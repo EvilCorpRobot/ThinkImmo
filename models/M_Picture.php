@@ -18,8 +18,8 @@ class Picture extends Model {
     }
 
     public function updatePictures($id_property, $path) {
-        $sql = "UPDATE image SET id_property=?, path=?";
-        $this->executeRequest($sql, array($id_property, $path));
+        $sql = "UPDATE image SET id_property=?, path=? WHERE id_property=?";
+        $this->executeRequest($sql, array($id_property, $path, $id_property));
     }
 
 }
