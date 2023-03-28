@@ -24,9 +24,10 @@ class ControllerHouse extends ControllerProperty
         // echo $idProperty;
 
         $houseAllInfo = $this->house->get_HouseAllInfo($idProperty); 
+        $houseAllPictures = $this->pictures->get_HouseAllPictures($idProperty);
 
         $vue = new View("HouseClient");
-        $vue->generer(["houseAllInfo" => $houseAllInfo]);
+        $vue->generer(["houseAllInfo" => $houseAllInfo, "houseAllPictures" => $houseAllPictures]);
     }
 
     //affiche vue Description House DashBoard

@@ -12,6 +12,12 @@ class Picture extends Model {
         return $firstPictures;
     } 
 
+    public function get_HouseAllPictures($id_property) {
+        $sql = 'SELECT * FROM image WHERE id_property = ?; ';
+        $result = $this->executeRequest($sql, array($id_property));
+        return $result;
+    }
+
     public function addPictures($id_property, $path) {
         $sql = "INSERT INTO image (id_property, path) VALUES (?, ?)";
         $this->executeRequest($sql, array($id_property, $path));
