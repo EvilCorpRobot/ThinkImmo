@@ -129,5 +129,13 @@ $this->titre = "Accueil";
     </div>
 </main>
 
+
+<?php 
+
+var_dump($pictures);
+
+?>
+
+
 </div>
 </main>
