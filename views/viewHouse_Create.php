@@ -6,7 +6,7 @@ $this->titre = "Creation Maison";
 <link rel="stylesheet" href="./views/styles/housecreate.css">
 
 <div class="form_house_create">
-    <form action="./index.php?action=addHouse" method="post">
+    <form action="./index.php?action=addHouse" method="post" enctype="multipart/form-data">
         <div class="house_area">
             <label for="contract">Contrat</label><br>
             <input type="radio" name="contract" value="location">
@@ -17,7 +17,10 @@ $this->titre = "Creation Maison";
             <label for="title">Titre</label><br>
             <input type="text" name="title"><br>
 
-            <!-- <input type="file" name="picture" multiple><br> -->
+            <label for="file">Inserez 3 images</label><br>
+            <input type="file" name="picture1"><br>
+            <input type="file" name="picture2"><br>
+            <input type="file" name="picture3"><br>
             <!-- <img src="https://placehold.it/480x430" alt="Image 1">
     <img src="https://placehold.it/480x430" alt="Image 1">
     <img src="https://placehold.it/480x430" alt="Image 1"><br> -->

@@ -14,30 +14,31 @@ $idProperty = $_GET["id_property"];
 <link rel="stylesheet" href="./views/styles/flatUpdate.css">
 <div class="flat_update_container">
     <div class="form_flat_update">
-        <form action="./index.php?action=updateFlat&id_property=<?= $idProperty ?>" method="post">
+    <form action="./index.php?action=updateFlat&id_property=<?= $idProperty ?>" method="post" enctype="multipart/form-data">
 
-            <?php foreach ($flatInfo as $info) { ?>
+    <?php foreach($flatInfo as $info) { ?>
 
-                <?php if ($info['contract'] == "location") { ?>
-                    <label for="contract">Contrat</label><br>
-                    <input type="radio" name="contract" value="location" checked>
-                    <label for="location">Location</label>
-                    <input type="radio" name="contract" value="achat">
-                    <label for="achat">Achat</label><br>
-                <?php } else { ?>
-                    <label for="contract">Contrat</label><br>
-                    <input type="radio" name="contract" value="location">
-                    <label for="location">Location</label>
-                    <input type="radio" name="contract" value="achat" checked>
-                    <label for="achat">Achat</label><br>
-                <?php } ?>
+        <?php if($info['contract'] == "location") { ?>
+            <label for="contract">Contrat</label><br>
+            <input type="radio" name="contract" value="location" checked>
+            <label for="location">Location</label>
+            <input type="radio" name="contract" value="achat">
+            <label for="achat">Achat</label><br>
+        <?php } else { ?>
+            <label for="contract">Contrat</label><br>
+            <input type="radio" name="contract" value="location">
+            <label for="location">Location</label>
+            <input type="radio" name="contract" value="achat" checked>
+            <label for="achat">Achat</label><br>
+        <?php } ?>
 
-                <label for="title">Titre</label><br>
-                <input type="text" name="title" id="title" value="<?= $info['title'] ?>"><br>
+        <label for="title">Titre</label><br>
+        <input type="text" name="title" value="<?= $info['title'] ?>"><br>
 
-                <!-- <img src="https://placehold.it/480x430" alt="Image 1">
-    <img src="https://placehold.it/480x430" alt="Image 1">
-    <img src="https://placehold.it/480x430" alt="Image 1"> -->
+        <label for="file">Inserez 3 images</label><br>
+        <input type="file" name="picture1"><br>
+        <input type="file" name="picture2"><br>
+        <input type="file" name="picture3"><br>
 
 
                 <label for="address">Adresse</label><br>

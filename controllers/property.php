@@ -43,4 +43,26 @@ class ControllerProperty {
             $vue->generer(["properties" => $properties, "pictures" => $pictures]);
         }
     }
+
+    public function filterProperty() {
+        $purchase = null;
+        $rent = null;
+        $house = null;
+        $flat = null;
+        
+        if (isset($_POST["purchase"]) && $_POST["purchase"] == "on") {
+            $purchase = true;
+        }
+        if (isset($_POST["rent"]) && $_POST["rent"] == "on") {
+            $rent = true;
+        }
+        if (isset($_POST["house"]) && $_POST["house"] == "on") {
+            $house = true;
+        }
+        if (isset($_POST["flat"]) && $_POST["flat"] == "on") {
+            $flat = true;
+        }
+
+        $this->property->getPropertiesByFilter($purchase, $rent, $house, $flat, $_POST["room"], $_POST["area"], $_POST["pricemin"], $_POST["pricemax"], $_POST["location"]);
+    }
 }

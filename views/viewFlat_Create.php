@@ -7,7 +7,7 @@ $this->titre = "Creation Appartement";
 <link rel="stylesheet" href="./views/styles/flatCreate.css">
 <div class="flat_create_container">
     <div class="form_flat_create">
-        <form action="./index.php?action=addFlat" method="post">
+        <form action="./index.php?action=addFlat" method="post" enctype="multipart/form-data">
             <div class="flat_area">
                 <label for="contract">Contrat</label><br>
                 <input type="radio" name="contract" value="location">
@@ -18,6 +18,10 @@ $this->titre = "Creation Appartement";
                 <label for="title">Titre</label><br>
                 <input type="text" name="title"><br>
 
+                <label for="file">Inserez 3 images</label><br>
+                <input type="file" name="picture1"><br>
+                <input type="file" name="picture2"><br>
+                <input type="file" name="picture3"><br>
                 <!-- <img src="https://placehold.it/480x430" alt="Image 1">
     <img src="https://placehold.it/480x430" alt="Image 1">
     <img src="https://placehold.it/480x430" alt="Image 1"> -->
