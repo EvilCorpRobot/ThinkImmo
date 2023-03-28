@@ -33,7 +33,11 @@ class ControllerProperty {
     //permet d'afficher la page DashBoardHome
     //titre - image des appartements et des maisons
     public function displayDashHome() {
-
+        $properties = $this->property->getProperties();
+        $pictures = $this->pictures->getFirstPictures();
+        
+        $vue = new View("DashHome");
+        $vue->generer(["properties" => $properties, "pictures" => $pictures]);
     }
 
     public function filterProperty() {

@@ -1,56 +1,84 @@
 <?php
 
 require_once './models/M_House.php';
+require_once "./models/M_Picture.php";
 require_once './views/view.php';
 
-class ControllerHouse extends ControllerProperty  {
+class ControllerHouse extends ControllerProperty
+{
 
     private $house;
+    private $pictures;
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->house = new House();
+        $this->pictures = new Picture();
     }
 
     //affiche vue Description House Client
-    public function displayHouseClient() {
+    public function displayHouseClient()
+    {
+        $idProperty = $_GET['id_property'];
+        // echo $idProperty;
 
+        $houseAllInfo = $this->house->get_HouseAllInfo($idProperty); 
+
+        $vue = new View("HouseClient");
+        $vue->generer(["houseAllInfo" => $houseAllInfo]);
     }
 
     //affiche vue Description House DashBoard
-    public function displayHouseDashboard() {
+    public function displayHouseDashboard()
+    {
+        $idProperty = $_GET['id_property'];
 
+        $houseAllInfo = $this->house->get_HouseAllInfo($idProperty);
+
+        $vue = new View("HouseDash");
+        $vue->generer(["houseAllInfo" => $houseAllInfo]);
     }
 
     //affiche vue Creation de maison
-    public function displayHouseCreate() {
+    public function displayHouseCreate()
+    {
         $vue = new View("House_Create");
         $vue->generer(["error" => "error"]);
     }
 
     //affiche vue Modification de maison
-    public function displayHouseUpdate() {
+    public function displayHouseUpdate()
+    {
+        $idProperty = $_GET['id_property'];
+
+        $houseAllInfo = $this->house->get_HouseAllInfo($idProperty);
+
         $vue = new View("House_Update");
-        $vue->generer(["error" => "error"]);
+        $vue->generer(["houseInfo" => $houseAllInfo]);
     }
 
     //recupere en Bdd une maison
-    public function gethouse() {
-
+    public function getHouse()
+    {
+        $houseInfo = $this->house->get_House();
+        return $houseInfo;
     }
 
     //ajoute en Bdd une maison
-    public function addHouse() {
-        // echo "bonjour";
+    public function addHouse()
+    {
 
-        if(!empty($_POST)) {  //a tester avec isset()
+        if (isset($_POST)) {
 
             // print_r($_POST);
 
             $contract = $_POST['contract'];
             $title = $_POST['title'];
+            // $picture = $_POST['picture'];
             $address = $_POST['address'];
             $description = $_POST['description'];
+            $type = $_POST['type'];
             $area = $_POST['area'];
             $charge = $_POST['charge'];
             $rooms = $_POST['rooms'];
@@ -63,69 +91,99 @@ class ControllerHouse extends ControllerProperty  {
             $floor = $_POST['floor'];
             $outbuilding = $_POST['outbuilding'];
             $price = $_POST['price'];
+
+            $result = $this->house->add_House( $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding);
             
-            $result = $this->house->add_House(
-                $contract,
-                $title,
-                $address,
-                $description,
-                $area,
-                $charge,
-                $rooms,
-                $epd,
-                $kitchen,
-                $parking,
-                $exterior,
-                $pool,
-                $landArea,
-                $floor,
-                $outbuilding,
-                $price,
-            );
+            
+            $extension = pathinfo($_FILES['picture1']['name'], PATHINFO_EXTENSION);
+            $newFileName = "propriete_" . $result . "_1." . $extension;
+            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            mkdir($uploadFileDir);
+            move_uploaded_file($_FILES['picture1']['tmp_name'], $uploadFileDir . $newFileName);
 
-            echo $contract; 
-            echo '<br>';
-            echo $title; 
-            echo '<br>';
-            echo $address; 
-            echo '<br>';
-            echo $description; 
-            echo '<br>';
-            echo $area; 
-            echo '<br>';
-            echo $charge; 
-            echo '<br>';
-            echo $rooms; 
-            echo '<br>';
-            echo $epd; 
-            echo '<br>';
-            echo $kitchen; 
-            echo '<br>';
-            echo $parking; 
-            echo '<br>';
-            echo $exterior; 
-            echo '<br>';
-            echo $pool; 
-            echo '<br>';
-            echo $landArea; 
-            echo '<br>';
-            echo $floor; 
-            echo '<br>';
-            echo $outbuilding; 
-            echo '<br>';
-            echo $price;
-            echo '<br>';
+            $this->pictures->addPictures($result, $uploadFileDir . $newFileName);
 
+            $extension = pathinfo($_FILES['picture2']['name'], PATHINFO_EXTENSION);
+            $newFileName = "propriete_" . $result . "_2." . $extension;
+            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            move_uploaded_file($_FILES['picture2']['tmp_name'], $uploadFileDir . $newFileName);
+
+            $this->pictures->addPictures($result, $uploadFileDir . $newFileName);
+
+            $extension = pathinfo($_FILES['picture3']['name'], PATHINFO_EXTENSION);
+            $newFileName = "propriete_" . $result . "_3." . $extension;
+            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            
+            move_uploaded_file($_FILES['picture3']['tmp_name'], $uploadFileDir . $newFileName);
+            
+            $this->pictures->addPictures($result, $uploadFileDir . $newFileName);
+            
+            $this->displayDashHome();
         }
     }
 
-    //suprrime en Bdd une maison
-    public function deleteHouse() {
+    //suprime en Bdd une maison
+    public function deleteHouse()
+    {
 
     }
 
     //met a jour en Bdd une maison
-    public function updateHouse() {
+    public function updateHouse()
+    {
+        $houseId = $_GET['id_property'];
+            
+        if(isset($_POST)) {
 
+            // var_dump($_POST);            
+
+            $contract = $_POST['contract'];
+            $title = $_POST['title'];
+            // $picture = $_POST['picture'];
+            $address = $_POST['address'];
+            $description = $_POST['description'];
+            $type = $_POST['type'];
+            $area = $_POST['area'];
+            $charge = $_POST['charge'];
+            $rooms = $_POST['rooms'];
+            $epd = $_POST['epd'];
+            $kitchen = $_POST['kitchen'];
+            $parking = $_POST['parking'];
+            $exterior = $_POST['exterior'];
+            $pool = $_POST['pool'];
+            $landArea = $_POST['landArea'];
+            $floor = $_POST['floor'];
+            $outbuilding = $_POST['outbuilding'];
+            $price = $_POST['price'];
+
+            $this->house->update_House($houseId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding);
+            $result = $houseId;
+            $dirname = './assets/propertiesPictures/propriete_' . $result . "/";
+            array_map('unlink', glob("$dirname/*.*"));
+            rmdir('./assets/propertiesPictures/propriete_' . $result . "/");
+            $extension = pathinfo($_FILES['picture1']['name'], PATHINFO_EXTENSION);
+            $newFileName = "propriete_" . $result . "_1." . $extension;
+            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            mkdir($uploadFileDir);
+            move_uploaded_file($_FILES['picture1']['tmp_name'], $uploadFileDir . $newFileName);
+
+            $this->pictures->updatePictures($result, $uploadFileDir . $newFileName);
+
+            $extension = pathinfo($_FILES['picture2']['name'], PATHINFO_EXTENSION);
+            $newFileName = "propriete_" . $result . "_2." . $extension;
+            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            move_uploaded_file($_FILES['picture2']['tmp_name'], $uploadFileDir . $newFileName);
+
+            $this->pictures->updatePictures($result, $uploadFileDir . $newFileName);
+
+            $extension = pathinfo($_FILES['picture3']['name'], PATHINFO_EXTENSION);
+            $newFileName = "propriete_" . $result . "_3." . $extension;
+            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            
+            move_uploaded_file($_FILES['picture3']['tmp_name'], $uploadFileDir . $newFileName);
+            
+            $this->pictures->updatePictures($result, $uploadFileDir . $newFileName);
+            }
+        $this->displayDashHome();
     }
 }
