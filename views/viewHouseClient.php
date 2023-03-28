@@ -2,7 +2,7 @@
 
 $idProperty = $_GET['id_property'];
 
-echo $idProperty;
+// echo $idProperty;
 
 ?>
 
@@ -109,10 +109,3 @@ $this->titre = "Description House Client";
         </form>
     </div>
 </div>
-
-
-<?php
-
-    var_dump($houseAllPictures);
-
-?>

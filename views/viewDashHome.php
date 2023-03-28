@@ -96,8 +96,6 @@ $this->titre = "DashBoard";
     </form>
 
     <p id="dashboard_title">Dashboard</p>
-    <a href="./index.php?action=displayHouseCreate">
-    
 
     <div class="wrapper">
         <div class="modal_btn">
@@ -116,17 +114,17 @@ $this->titre = "DashBoard";
                 </div>
                 <div class="modal_footer">
                     <div class="modal_btn_grp">
-                        <div class="btn btn_cancel">Maison</div>
+                        <a href="./index.php?action=displayHouseCreate">
+                            <div class="btn btn_cancel">Maison</div>
+                        </a>
+                        <a href="./index.php?action=displayFlatCreate">
                         <div class="btn btn_confirm">Appartement</div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </a>
-    <a href="./index.php?action=displayFlatCreate">
-        <button class="action_btn">Créer un nouveau appartement</button>
-    </a>
 
     <div class="container_card_home">
         <?php $i = 0;?>
