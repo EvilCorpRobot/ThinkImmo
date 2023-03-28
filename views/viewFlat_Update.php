@@ -33,7 +33,7 @@ $idProperty = $_GET["id_property"];
         <?php } ?>
 
         <label for="title">Titre</label><br>
-        <input type="text" name="title" value="<?= $info['title'] ?>"><br>
+        <input type="text" name="title" value="<?= $info['title'] ?>" class="title_update"><br>
 
         <label for="file">Inserez 3 images</label><br>
         <input type="file" name="picture1"><br>
@@ -101,7 +101,7 @@ $idProperty = $_GET["id_property"];
                         <input type="hidden" name="type" value="Appartement">
                     </div>
                     <div>
-                        <input type="submit" value="Modifier">
+                        <input type="submit" value="Modifier" class="action_btn">
                     <?php
                     break;
                 }
@@ -110,6 +110,6 @@ $idProperty = $_GET["id_property"];
                 </div>
         </form>
         <a href="./index.php?action=deleteFlat&id_property=<?= $idProperty ?>">
-            <button>Supprimer</button>
+            <button class="action_btn">Supprimer</button>
     </div>
 </div>
