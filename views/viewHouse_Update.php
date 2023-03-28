@@ -14,33 +14,33 @@ $idProperty = $_GET['id_property'];
 <link rel="stylesheet" href="./views/styles/houseUpdate.css">
 
 <div class="form_house_update">
-<form action="./index.php?action=updateHouse&id_property=<?= $idProperty ?>" method="post" enctype="multipart/form-data">
+    <form action="./index.php?action=updateHouse&id_property=<?= $idProperty ?>" method="post" enctype="multipart/form-data">
 
-    <?php foreach($houseInfo as $info) { ?>
+        <?php foreach ($houseInfo as $info) { ?>
 
-        <?php if($info['contract'] == "location") { ?>
-            <label for="contract">Contrat</label><br>
-            <input type="radio" name="contract" value="location" checked>
-            <label for="location">Location</label>
-            <input type="radio" name="contract" value="achat">
-            <label for="achat">Achat</label><br>
-        <?php } else { ?>
-            <label for="contract">Contrat</label><br>
-            <input type="radio" name="contract" value="location">
-            <label for="location">Location</label>
-            <input type="radio" name="contract" value="achat" checked>
-            <label for="achat">Achat</label><br>
-        <?php } ?>
+            <?php if ($info['contract'] == "location") { ?>
+                <label for="contract">Contrat</label><br>
+                <input type="radio" name="contract" value="location" checked>
+                <label for="location">Location</label>
+                <input type="radio" name="contract" value="achat">
+                <label for="achat">Achat</label><br>
+            <?php } else { ?>
+                <label for="contract">Contrat</label><br>
+                <input type="radio" name="contract" value="location">
+                <label for="location">Location</label>
+                <input type="radio" name="contract" value="achat" checked>
+                <label for="achat">Achat</label><br>
+            <?php } ?>
 
-        <label for="title">Titre</label><br>
-        <input type="text" name="title" value="<?= $info['title'] ?>"><br>
+            <label for="title">Titre</label><br>
+            <input type="text" name="title" value="<?= $info['title'] ?>"><br>
 
 
-        <label for="file">Inserez 3 images</label><br>
-        <input type="file" name="picture1"><br>
-        <input type="file" name="picture2"><br>
-        <input type="file" name="picture3"><br>
-    
+            <label for="file">Inserez 3 images</label><br>
+            <input type="file" name="picture1"><br>
+            <input type="file" name="picture2"><br>
+            <input type="file" name="picture3"><br>
+
 
             <label for="address">Adresse</label><br>
             <input type="text" name="address" value="<?= $info['address'] ?>"><br>
@@ -129,7 +129,7 @@ $idProperty = $_GET['id_property'];
                     <input type="hidden" name="type" value="Maison">
                 </div>
                 <div>
-                    <input type="submit" value="Modifier">
+                    <input type="submit" value="Modifier" class="action_btn">
                 <?php
                 break;
             }
@@ -137,7 +137,7 @@ $idProperty = $_GET['id_property'];
                 </div>
             </div>
     </form>
-        <a href="./index.php?action=deleteHouse&id_property=<?= $idProperty ?>">
-            <button>Supprimer</button>
-        </a>
+    <a href="./index.php?action=deleteHouse&id_property=<?= $idProperty ?>">
+        <button class="action_btn">Supprimer</button>
+    </a>
 </div>
