@@ -102,7 +102,7 @@ $this->titre = "Accueil";
                 <div class="card_home">
                     <a href="./index.php?action=displayHouseClient&id_property=<?= $propertie['id_property'] ?>" method="post">
                         <div class="card_header">
-                            <img src="<?='.' . $pictures[$i]['first_url']?>" alt="Image 1">
+                            <img src="<?=$pictures[$i]['first_url']?>" alt="Image 1">
                         </div>
                         <div class="card_body_home">
                             <span class="tag tag-teal"><?= $propertie['title'] ?></span>
@@ -114,7 +114,7 @@ $this->titre = "Accueil";
                 <div class="card_home">
                     <a href="./index.php?action=displayFlatClient&id_property=<?= $propertie['id_property'] ?>" method="post">
                         <div class="card_header">
-                            <img src="<?='.' . $pictures[$i]['first_url']?>" alt="Image 1">
+                            <img src="<?= $pictures[$i]['first_url']?>" alt="Image 1">
                         </div>
                         <div class="card_body_home">
                             <span class="tag tag-teal"><?= $propertie['title'] ?></span>
@@ -128,14 +128,6 @@ $this->titre = "Accueil";
 
     </div>
 </main>
-
-
-<?php 
-
-var_dump($pictures);
-
-?>
-
 
 </div>
 </main>
