@@ -25,11 +25,11 @@ $this->titre = "Description House Client";
 
                 <div class="grid-container">
                     <div class="grid-item">
-                        <img src="https://placehold.it/480x430" alt="Image 1">
+                        <img src="<?= $houseAllPictures[0]['path']?>" alt="Image 1">
                     </div>
                     <div class="grid-item">
-                        <img src="https://placehold.it/480x215" alt="Image 2">
-                        <img src="https://placehold.it/480x215" alt="Image 3">
+                        <img src="<?= $houseAllPictures[1]['path']?>" alt="Image 2">
+                        <img src="<?= $houseAllPictures[2]['path']?>" alt="Image 3">
                     </div>
                 </div>
 
@@ -109,3 +109,10 @@ $this->titre = "Description House Client";
         </form>
     </div>
 </div>
+
+
+<?php
+
+    var_dump($houseAllPictures);
+
+?>
