@@ -25,6 +25,7 @@ class ControllerFlat extends ControllerProperty {
         $flatAllInfo = $this->flat->get_FlatAllInfo($idProperty);
 
         $vue = new View("FlatClient");
+        var_dump($flatAllInfo);
         $vue->generer(["flatAllInfo" => $flatAllInfo]);
     }
 
