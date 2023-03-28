@@ -1,0 +1,90 @@
+.flat_update_container
+{
+  background-color: #faf1ed;
+}
+.form_flat_update {
+    
+    padding-left: 40px;
+    margin:auto;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom : 20px;
+}
+.form_flat_update input {
+  padding: 10px;
+  text-align: center;
+}
+.form_flat_label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-check-label {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.form-check-input {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+#title {
+  width: 500px;
+}
+.update_description {
+  padding: 10px;
+}
+.flat_area_1, .flat_area_2, .flat_area_3, .flat_area_4, .flat_area_5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  margin-bottom: 40px;
+}
+
+.flat_area_1 > div,
+.flat_area_2 > div,
+.flat_area_3 > div,
+.flat_area_4 > div,
+.flat_area_5 > div {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.flat_area_1 label,
+.flat_area_2 label,
+.flat_area_3 label,
+.flat_area_4 label,
+.flat_area_5 label {
+  grid-row: 1 / 2;
+  margin-bottom: 5px;
+}
+
+.flat_area_1 span,
+.flat_area_2 span,
+.flat_area_3 span,
+.flat_area_4 span,
+.flat_area_5 span {
+  grid-row: 2 / 3;
+}
+.form_flat_update input, textarea {
+    border-radius : 25.5px;
+}
+.form_flat_update textarea {
+    width: 95%;
+    height: 225px;
+}
+.flat_area {
+    margin-left:35px;
+}
+
+
+.update_flat_btn {
+    padding: 0 20px;
+    margin-top:30px;
+    margin-left:187px;
+}

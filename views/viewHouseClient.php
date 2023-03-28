@@ -8,7 +8,7 @@ echo $idProperty;
 
 <?php
 
-    $this->titre = "Description House Client";
+$this->titre = "Description House Client";
 
 ?>
 
@@ -23,16 +23,20 @@ echo $idProperty;
 
                 <label for="title" class="title"><?= $houseAllInfo[0]['title'] ?></label><br>
 
-                <div>
-                    <img src="https://placehold.it/480x430" alt="Image 1">
-                    <!-- <img src="https://placehold.it/480x430" alt="Image 1">
-                    <img src="https://placehold.it/480x430" alt="Image 1">-->
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="https://placehold.it/480x430" alt="Image 1">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://placehold.it/480x215" alt="Image 2">
+                        <img src="https://placehold.it/480x215" alt="Image 3">
+                    </div>
                 </div>
 
                 <label for="address"><?= $houseAllInfo[0]['address'] ?></label><br>
                 <span class="info"></span>
                 <div>
-                    
+
                     <span class="info" id="price"><?= $houseAllInfo[0]['price'] ?> €</span>
                 </div>
                 <label for="description" class="description">Description</label><br>
