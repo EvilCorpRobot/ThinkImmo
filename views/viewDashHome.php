@@ -96,7 +96,8 @@ $this->titre = "DashBoard";
     </form>
 
     <p id="dashboard_title">Dashboard</p>
-
+    <a href="./index.php?action=displayHouseCreate">
+    
 
     <div class="wrapper">
         <div class="modal_btn">
@@ -122,37 +123,42 @@ $this->titre = "DashBoard";
             </div>
         </div>
     </div>
+    </a>
+    <a href="./index.php?action=displayFlatCreate">
+        <button class="action_btn">Créer un nouveau appartement</button>
+    </a>
 
     <div class="container_card_home">
-        <?php foreach ($properties as $propertie) { ?>
-            <?php foreach ($pictures as $picture) { ?>
-                <?php if ($propertie['type'] == 'Maison') { ?>
-                    <div class="card_home">
-                        <a href="./index.php?action=displayHouseUpdate&id_property=<?= $propertie['id_property'] ?>" method="post">
-                            <div class="card_header">
-                                <img src="<?= '.' . $picture['first_url'] ?>" alt="Image 1">
-                            </div>
-                            <div class="card_body_home">
-                                <span class="tag tag-teal"><?= $propertie['title'] ?></span>
-                            </div>
-                        </a>
-                    </div>
-                    <?php break; ?>
-                <?php } else { ?>
-                    <div class="card_home">
-                        <a href="./index.php?action=displayFlatUpdate&id_property=<?= $propertie['id_property'] ?>" method="post">
-                            <div class="card_header">
-                                <img src="<?= '.' . $picture['first_url'] ?>" alt="Image 1">
-                            </div>
-                            <div class="card_body_home">
-                                <span class="tag tag-teal"><?= $propertie['title'] ?></span>
-                            </div>
-                        </a>
-                    </div>
-                    <?php break; ?>
-                <?php } ?>
-            <?php } ?>
+        <?php $i = 0;?>
+    <?php foreach($properties as $propertie) {?>
+    <?php foreach($pictures as $picture) {?>
+        <?php if($propertie['type'] == 'Maison') { ?>
+                <div class="card_home">
+                    <a href="./index.php?action=displayHouseUpdate&id_property=<?= $propertie['id_property'] ?>" method="post">
+                        <div class="card_header">
+                            <img src="<?=$pictures[$i]['first_url']?>" alt="Image 1">
+                        </div>
+                        <div class="card_body_home">
+                            <span class="tag tag-teal"><?= $propertie['title'] ?></span>
+                        </div>
+                    </a>
+                </div>
+        <?php break; ?>
+        <?php } else { ?>
+                <div class="card_home">
+                    <a href="./index.php?action=displayFlatUpdate&id_property=<?= $propertie['id_property'] ?>" method="post">
+                        <div class="card_header">
+                            <img src="<?=$pictures[$i]['first_url']?>" alt="Image 1">
+                        </div>
+                        <div class="card_body_home">
+                            <span class="tag tag-teal"><?= $propertie['title'] ?></span>
+                        </div>
+                    </a>
+                </div>
+        <?php break; ?>
         <?php } ?>
+    <?php } $i++; ?>
+    <?php } ?>
 
     </div>
 </main>

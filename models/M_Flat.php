@@ -16,17 +16,24 @@ class Flat extends Model {
         return $result;
     }
 
+    public function delete_Flat($flatId) {
+        $sql = 'DELETE FROM `property` WHERE id_property = ?;';
+
+        $result = $this->executeRequest($sql, array($flatId));
+    }
+
     public function add_Flat(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
                                 $kitchen, $parking, $exterior, $price, $parcel, $floorNumber) {
-        $sql = "INSERT INTO property (contract, title, address, description, type, area, charge, rooms, epd, kitchen, parking, exterior, price)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-
-                INSERT INTO flat (id_property, parcel, floorNumber)
-                VALUES (LAST_INSERT_ID(), ?, ?);";
-        $result = $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
-                                            $kitchen, $parking, $exterior, $price, $parcel, $floorNumber));
-
-        return $result;
+        $sql1 = "INSERT INTO property (contract, title, address, description, type, area, charge, rooms, epd, kitchen, parking, exterior, price)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        
+        $this->executeRequest($sql1, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+                                            $kitchen, $parking, $exterior, $price));
+        $id = $this->getBdd()->lastInsertId();
+        $sql2 = "INSERT INTO flat (id_property, parcel, floorNumber)
+        VALUES (?, ?, ?);";
+        $this->executeRequest($sql2, array($id, $parcel, $floorNumber));
+        return $id;
     }
 
     public function update_Flat($flatId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 

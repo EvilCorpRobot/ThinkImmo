@@ -21,27 +21,36 @@ class House extends Model {
         $sql = "INSERT INTO property (contract, title, address, description, type, area, charge, rooms, epd, kitchen, parking, exterior, price)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
-                INSERT INTO house (id_property, pool, landArea, floor, outbuilding)
-                VALUES (LAST_INSERT_ID(), ?, ?, ?, ?);";
-        $result = $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
-                                        $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding));
+                ";
+        $this->executeRequest($sql, array(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+        $kitchen, $parking, $exterior, $price));
+        $id = $this->getBdd()->lastInsertId();
+        $sql2 = "INSERT INTO house (id_property, pool, landArea, floor, outbuilding)
+        VALUES (LAST_INSERT_ID(), ?, ?, ?, ?);";
+        $this->executeRequest($sql2, array($pool, $landArea, $floor, $outbuilding));
         
-        return $result;
+        return $id;
     }
     
+    public function delete_House($houseId) {
+        $sql = 'DELETE FROM `property` WHERE id_property = ?;';
+
+        $result = $this->executeRequest($sql, array($houseId));
+    }
+
+
     public function update_House(   $houseId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
                                     $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding) {
         
-        $sql = "UPDATE property SET contract=?, title=?, address=?, description=?, type=?, area=?, charge=?, rooms=?, epd=?,
+        $sql1 = "UPDATE property SET contract=?, title=?, address=?, description=?, type=?, area=?, charge=?, rooms=?, epd=?,
                                     kitchen=?, parking=?, exterior=?, price=?
-                WHERE id_property=?;
-                                    
-                UPDATE house SET pool=?, landArea=?, floor=?, outbuilding=?
                 WHERE id_property=?";
 
-        $result = $this->executeRequest($sql, array($contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
-                                                    $kitchen, $parking, $exterior, $price, $houseId, $pool, $landArea, $floor, $outbuilding, $houseId));
-        
+        $result = $this->executeRequest($sql1, array($contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+                                                    $kitchen, $parking, $exterior, $price, $houseId));
+        $sql2 = "UPDATE house SET pool=?, landArea=?, floor=?, outbuilding=?
+        WHERE id_property=?";
+        $this->executeRequest($sql2, array($pool, $landArea, $floor, $outbuilding, $houseId));
         return $result;
     }
 }

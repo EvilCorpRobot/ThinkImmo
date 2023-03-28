@@ -33,11 +33,17 @@ class Routeur {
                     if($_GET['action'] == 'adminLogin') {
                         $this->ctrlAdmin->adminLogin();
                     } else
+                    if($_GET['action'] == 'adminLogout') {
+                        $this->ctrlAdmin->adminLogout();
+                    } else
                     if($_GET['action'] == 'displayClientResult') {
                         $this->ctrlProperty->displayClientResult();
                     } else
                     if($_GET['action'] == 'displayDashHome') {
                         $this->ctrlProperty->displayDashHome();
+                    } else
+                    if ($_GET["action"] == "filterProperty") {
+                        $this->ctrlProperty->filterProperty();
                     } else
                     if($_GET['action'] == 'getPicture') {
                         $this->ctrlPictures->getPicture();

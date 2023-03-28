@@ -13,7 +13,7 @@ $this->titre = "Accueil";
         <div class="grid_container">
             <div class="grid">
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="purchase" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/euro.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -26,7 +26,7 @@ $this->titre = "Accueil";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="rent" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/clé.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -39,7 +39,7 @@ $this->titre = "Accueil";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="house" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/house.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -51,7 +51,7 @@ $this->titre = "Accueil";
                     </div>
                 </label>
                 <label class="card">
-                    <input class="card__input" type="checkbox" />
+                    <input class="card__input" name="flat" type="checkbox" />
                     <div class="card__body">
                         <div class="card__body-cover"><img class="card__body-cover-image" src="./assets/immeuble.jpg" /><span class="card__body-cover-checkbox">
                                 <svg class="card__body-cover-checkbox--svg" viewBox="0 0 12 10">
@@ -89,11 +89,12 @@ $this->titre = "Accueil";
 
             <button class="button_choice" type="submit">Valider mes choix</button>
 
-
         </div>
     </form>
 
     <div class="container_card_home">
+    <?php $i = 0;
+    ?>
 
     <?php foreach($properties as $propertie) {?>
     <?php foreach($pictures as $picture) {?>
@@ -101,7 +102,7 @@ $this->titre = "Accueil";
                 <div class="card_home">
                     <a href="./index.php?action=displayHouseClient&id_property=<?= $propertie['id_property'] ?>" method="post">
                         <div class="card_header">
-                            <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+                            <img src="<?=$pictures[$i]['first_url']?>" alt="Image 1">
                         </div>
                         <div class="card_body_home">
                             <span class="tag tag-teal"><?= $propertie['title'] ?></span>
@@ -113,7 +114,7 @@ $this->titre = "Accueil";
                 <div class="card_home">
                     <a href="./index.php?action=displayFlatClient&id_property=<?= $propertie['id_property'] ?>" method="post">
                         <div class="card_header">
-                            <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+                            <img src="<?= $pictures[$i]['first_url']?>" alt="Image 1">
                         </div>
                         <div class="card_body_home">
                             <span class="tag tag-teal"><?= $propertie['title'] ?></span>
@@ -122,7 +123,7 @@ $this->titre = "Accueil";
                 </div>
         <?php break; ?>
         <?php } ?>
-    <?php } ?>
+    <?php } $i++; ?>
     <?php } ?>
 
     </div>

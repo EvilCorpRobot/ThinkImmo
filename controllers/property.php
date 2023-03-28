@@ -33,10 +33,36 @@ class ControllerProperty {
     //permet d'afficher la page DashBoardHome
     //titre - image des appartements et des maisons
     public function displayDashHome() {
-        $properties = $this->property->getProperties();
-        $pictures = $this->pictures->getFirstPictures();
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $properties = $this->property->getProperties();
+            $pictures = $this->pictures->getFirstPictures();
+            
+            $vue = new View("DashHome");
+            $vue->generer(["properties" => $properties, "pictures" => $pictures]);
+        }
+    }
+
+    public function filterProperty() {
+        $purchase = null;
+        $rent = null;
+        $house = null;
+        $flat = null;
         
-        $vue = new View("DashHome");
-        $vue->generer(["properties" => $properties, "pictures" => $pictures]);
+        if (isset($_POST["purchase"]) && $_POST["purchase"] == "on") {
+            $purchase = true;
+        }
+        if (isset($_POST["rent"]) && $_POST["rent"] == "on") {
+            $rent = true;
+        }
+        if (isset($_POST["house"]) && $_POST["house"] == "on") {
+            $house = true;
+        }
+        if (isset($_POST["flat"]) && $_POST["flat"] == "on") {
+            $flat = true;
+        }
+
+        $this->property->getPropertiesByFilter($purchase, $rent, $house, $flat, $_POST["room"], $_POST["area"], $_POST["pricemin"], $_POST["pricemax"], $_POST["location"]);
     }
 }
