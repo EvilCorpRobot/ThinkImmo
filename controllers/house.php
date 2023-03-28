@@ -111,7 +111,7 @@ class ControllerHouse extends ControllerProperty
             
             $extension = pathinfo($_FILES['picture1']['name'], PATHINFO_EXTENSION);
             $newFileName = "propriete_" . $result . "_1." . $extension;
-            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            $uploadFileDir = '/assets/propertiesPictures/propriete_' . $result . "/";
             mkdir($uploadFileDir);
             move_uploaded_file($_FILES['picture1']['tmp_name'], $uploadFileDir . $newFileName);
 
@@ -119,14 +119,14 @@ class ControllerHouse extends ControllerProperty
 
             $extension = pathinfo($_FILES['picture2']['name'], PATHINFO_EXTENSION);
             $newFileName = "propriete_" . $result . "_2." . $extension;
-            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            $uploadFileDir = '/assets/propertiesPictures/propriete_' . $result . "/";
             move_uploaded_file($_FILES['picture2']['tmp_name'], $uploadFileDir . $newFileName);
 
             $this->pictures->addPictures($result, $uploadFileDir . $newFileName);
 
             $extension = pathinfo($_FILES['picture3']['name'], PATHINFO_EXTENSION);
             $newFileName = "propriete_" . $result . "_3." . $extension;
-            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            $uploadFileDir = '/assets/propertiesPictures/propriete_' . $result . "/";
             
             move_uploaded_file($_FILES['picture3']['tmp_name'], $uploadFileDir . $newFileName);
             
@@ -185,12 +185,12 @@ class ControllerHouse extends ControllerProperty
 
             $this->house->update_House($houseId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, $kitchen, $parking, $exterior, $price, $pool, $landArea, $floor, $outbuilding);
             $result = $houseId;
-            $dirname = './assets/propertiesPictures/propriete_' . $result . "/";
+            $dirname = '/assets/propertiesPictures/propriete_' . $result . "/";
             array_map('unlink', glob("$dirname/*.*"));
-            rmdir('./assets/propertiesPictures/propriete_' . $result . "/");
+            rmdir('/assets/propertiesPictures/propriete_' . $result . "/");
             $extension = pathinfo($_FILES['picture1']['name'], PATHINFO_EXTENSION);
             $newFileName = "propriete_" . $result . "_1." . $extension;
-            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            $uploadFileDir = '/assets/propertiesPictures/propriete_' . $result . "/";
             mkdir($uploadFileDir);
             move_uploaded_file($_FILES['picture1']['tmp_name'], $uploadFileDir . $newFileName);
 
@@ -198,14 +198,14 @@ class ControllerHouse extends ControllerProperty
 
             $extension = pathinfo($_FILES['picture2']['name'], PATHINFO_EXTENSION);
             $newFileName = "propriete_" . $result . "_2." . $extension;
-            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            $uploadFileDir = '/assets/propertiesPictures/propriete_' . $result . "/";
             move_uploaded_file($_FILES['picture2']['tmp_name'], $uploadFileDir . $newFileName);
 
             $this->pictures->updatePictures($result, $uploadFileDir . $newFileName);
 
             $extension = pathinfo($_FILES['picture3']['name'], PATHINFO_EXTENSION);
             $newFileName = "propriete_" . $result . "_3." . $extension;
-            $uploadFileDir = './assets/propertiesPictures/propriete_' . $result . "/";
+            $uploadFileDir = '/assets/propertiesPictures/propriete_' . $result . "/";
             
             move_uploaded_file($_FILES['picture3']['tmp_name'], $uploadFileDir . $newFileName);
             
@@ -213,4 +213,5 @@ class ControllerHouse extends ControllerProperty
             }
         $this->displayDashHome();
     }
+}
 }

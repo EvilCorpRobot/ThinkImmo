@@ -104,13 +104,14 @@ $this->titre = "DashBoard";
     </a>
 
     <div class="container_card_home">
+        <?php $i = 0;?>
     <?php foreach($properties as $propertie) {?>
     <?php foreach($pictures as $picture) {?>
         <?php if($propertie['type'] == 'Maison') { ?>
                 <div class="card_home">
                     <a href="./index.php?action=displayHouseUpdate&id_property=<?= $propertie['id_property'] ?>" method="post">
                         <div class="card_header">
-                            <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+                            <img src="<?='.' . $pictures[$i]['first_url']?>" alt="Image 1">
                         </div>
                         <div class="card_body_home">
                             <span class="tag tag-teal"><?= $propertie['title'] ?></span>
@@ -122,7 +123,7 @@ $this->titre = "DashBoard";
                 <div class="card_home">
                     <a href="./index.php?action=displayFlatUpdate&id_property=<?= $propertie['id_property'] ?>" method="post">
                         <div class="card_header">
-                            <img src="<?='.' . $picture['first_url']?>" alt="Image 1">
+                            <img src="<?='.' . $pictures[$i]['first_url']?>" alt="Image 1">
                         </div>
                         <div class="card_body_home">
                             <span class="tag tag-teal"><?= $propertie['title'] ?></span>
@@ -131,7 +132,7 @@ $this->titre = "DashBoard";
                 </div>
         <?php break; ?>
         <?php } ?>
-    <?php } ?>
+    <?php } $i++; ?>
     <?php } ?>
 
     </div>
