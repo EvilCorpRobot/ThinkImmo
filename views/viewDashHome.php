@@ -96,7 +96,9 @@ $this->titre = "DashBoard";
 </form>
 
     <p id="dashboard_title">Dashboard</p>
-    <button class="action_btn">Créer un nouveau bien immobilier</button>
+    <a href="./index.php?action=displayHouseCreate">
+        <button class="action_btn">Créer un nouveau bien immobilier</button>
+    </a>
 
     <div class="container_card_home">
     <?php foreach($properties as $propertie) {?>

@@ -1,12 +1,15 @@
 <?php
 
+require_once 'property.php';
 require_once './models/M_Admin.php';
 require_once './views/view.php';
 
-class ControllerAdmin {
+class ControllerAdmin extends ControllerProperty {
 
     private $admin;
+
     public function __construct() {
+        parent::__construct();
         $this->admin = new Admin();
     }
 
@@ -17,13 +20,24 @@ class ControllerAdmin {
     }
 
     public function adminLogin() {
-        $id = $this->admin->isConnect($_POST["email"], $_POST["password"]);
-        if($id) {
-            session_start();
-            $_SESSION["auth"]["id"] = $id;
+        if (isset($_SESSION["auth"]["id"])) {
+            $this->displayDashHome(); 
         } else {
-            $loginView = new View("Login");
-            $loginView->generer(["error" => true]);
+           $id = $this->admin->isConnect($_POST["email"], $_POST["password"]);
+            if($id) { 
+                $_SESSION["auth"]["id"] = $id;
+
+                $this->displayDashHome();
+
+            } else {
+                $loginView = new View("Login");
+                $loginView->generer(["error" => true]);
+            }
         }
+    }
+
+    public function adminLogout() {
+        unset($_SESSION['auth']['id']);
+        $this->displayClientHome();
     }
 }

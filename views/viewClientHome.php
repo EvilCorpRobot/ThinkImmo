@@ -89,7 +89,6 @@ $this->titre = "Accueil";
 
             <button class="button_choice" type="submit">Valider mes choix</button>
 
-
         </div>
     </form>
 

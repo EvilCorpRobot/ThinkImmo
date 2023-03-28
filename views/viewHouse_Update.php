@@ -135,4 +135,7 @@ $idProperty = $_GET['id_property'];
                 </div>
             </div>
     </form>
+        <a href="./index.php?action=deleteHouse&id_property=<?= $idProperty ?>">
+            <button>Supprimer</button>
+        </a>
 </div>
