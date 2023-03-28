@@ -16,6 +16,12 @@ class Flat extends Model {
         return $result;
     }
 
+    public function delete_Flat($flatId) {
+        $sql = 'DELETE FROM `property` WHERE id_property = ?;';
+
+        $result = $this->executeRequest($sql, array($flatId));
+    }
+
     public function add_Flat(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
                                 $kitchen, $parking, $exterior, $price, $parcel, $floorNumber) {
         $sql = "INSERT INTO property (contract, title, address, description, type, area, charge, rooms, epd, kitchen, parking, exterior, price)

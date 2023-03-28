@@ -38,89 +38,116 @@ class ControllerFlat extends ControllerProperty {
 
     //affiche vue Creation d'appartement
     public function displayFlatCreate() {
-        $vue = new View('Flat_Create');
-        $vue->generer(["error" => "error"]);
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $vue = new View('Flat_Create');
+            $vue->generer(["error" => "error"]);
+        }
     }
 
     //affiche vue Modification d'appartement
     public function displayFlatUpdate() {
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
         $idProperty = $_GET["id_property"];
 
         $flatInfo = $this->flat->get_FlatAllInfo($idProperty);
 
         $vue = new View("Flat_Update");
         $vue->generer(['flatInfo' => $flatInfo]);
+        }
     }
 
 
     //recupere en Bdd un appartement
     public function getFlat() {
-        $flatInfo = $this->flat->get_Flat();
-        return $flatInfo;
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {  
+            $flatInfo = $this->flat->get_Flat();
+            return $flatInfo;
+        }
     }
 
     //ajoute en Bdd un appartement
     public function addFlat() {
-       
-        if(isset($_POST)) {
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            if(isset($_POST)) {
 
-            $contract = $_POST['contract'];
-            $title = $_POST['title'];
-            // $picture = $_POST['picture'];
-            $address = $_POST['address'];
-            $description = $_POST['description'];
-            $type = $_POST['type'];
-            $area = $_POST['area'];
-            $charge = $_POST['charge'];
-            $rooms = $_POST['rooms'];
-            $epd = $_POST['epd'];
-            $kitchen = $_POST['kitchen'];
-            $parking = $_POST['parking'];
-            $exterior = $_POST['exterior'];
-            $parcel = $_POST['parcel'];
-            $floorNumber = $_POST['floorNumber'];
-            $price = $_POST['price'];
+                $contract = $_POST['contract'];
+                $title = $_POST['title'];
+                // $picture = $_POST['picture'];
+                $address = $_POST['address'];
+                $description = $_POST['description'];
+                $type = $_POST['type'];
+                $area = $_POST['area'];
+                $charge = $_POST['charge'];
+                $rooms = $_POST['rooms'];
+                $epd = $_POST['epd'];
+                $kitchen = $_POST['kitchen'];
+                $parking = $_POST['parking'];
+                $exterior = $_POST['exterior'];
+                $parcel = $_POST['parcel'];
+                $floorNumber = $_POST['floorNumber'];
+                $price = $_POST['price'];
 
-            $this->flat->add_Flat(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
-                                    $kitchen, $parking, $exterior, $price, $parcel, $floorNumber);
-            
-            $this->displayDashHome();
+                $this->flat->add_Flat(  $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+                                        $kitchen, $parking, $exterior, $price, $parcel, $floorNumber);
+                
+                $this->displayDashHome();
+            }
         }
     }
 
     //supprime en Bdd un appartement
     public function deleteFlat() {
-        
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $flatId = $_GET['id_property'];
+
+            echo $flatId;
+
+            $result = $this->flat->delete_Flat($flatId);
+            $this->displayDashHome();
+        }
     }
 
     //met a jour en Bdd un appartement
     public function updateFlat() {
-                    
-        $flatId = $_GET["id_property"];
+        if (!isset($_SESSION["auth"]["id"])) {
+            $this->displayClientHome(); 
+        } else {
+            $flatId = $_GET["id_property"];
 
-        if(isset($_POST)) {
+            if(isset($_POST)) {
 
-            $contract = $_POST['contract'];
-            $title = $_POST['title'];
-            // $picture = $_POST['picture'];
-            $address = $_POST['address'];
-            $description = $_POST['description'];
-            $type = $_POST['type'];
-            $area = $_POST['area'];
-            $charge = $_POST['charge'];
-            $rooms = $_POST['rooms'];
-            $epd = $_POST['epd'];
-            $kitchen = $_POST['kitchen'];
-            $parking = $_POST['parking'];
-            $exterior = $_POST['exterior'];
-            $parcel = $_POST['parcel'];
-            $floorNumber = $_POST['floorNumber'];
-            $price = $_POST['price'];
+                $contract = $_POST['contract'];
+                $title = $_POST['title'];
+                // $picture = $_POST['picture'];
+                $address = $_POST['address'];
+                $description = $_POST['description'];
+                $type = $_POST['type'];
+                $area = $_POST['area'];
+                $charge = $_POST['charge'];
+                $rooms = $_POST['rooms'];
+                $epd = $_POST['epd'];
+                $kitchen = $_POST['kitchen'];
+                $parking = $_POST['parking'];
+                $exterior = $_POST['exterior'];
+                $parcel = $_POST['parcel'];
+                $floorNumber = $_POST['floorNumber'];
+                $price = $_POST['price'];
 
-            $this->flat->update_Flat($flatId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
-                                     $kitchen, $parking, $exterior, $price, $parcel, $floorNumber);
-            
-            $this->displayDashHome();
+                $this->flat->update_Flat($flatId, $contract, $title, $address, $description, $type, $area, $charge, $rooms, $epd, 
+                                        $kitchen, $parking, $exterior, $price, $parcel, $floorNumber);
+                
+                $this->displayDashHome();
+            }
         }
     }
 }
