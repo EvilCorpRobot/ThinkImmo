@@ -1,5 +1,8 @@
+.house_update_container {
+  background-color: #faf1ed;
+}
 .form_house_update {
-    background-color: #faf1ed;
+    
     padding-left: 40px;
     margin:auto;
     width: 50%;
@@ -25,7 +28,7 @@
   margin-right: 5px;
   vertical-align: middle;
 }
-#title {
+.title_update {
   width: 500px;
 }
 .update_description {
