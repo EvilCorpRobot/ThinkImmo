@@ -99,7 +99,9 @@ class ControllerHouse extends ControllerProperty
     //suprime en Bdd une maison
     public function deleteHouse()
     {
+        $houseId = $_GET['id_property'];
 
+        echo $houseId;
     }
 
     //met a jour en Bdd une maison

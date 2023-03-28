@@ -16,7 +16,7 @@
     <header>
         <div class="navbar">
 
-            <?php if(!isset($_SESSION['id'])) { ?>
+            <?php if(!isset($_SESSION['auth']['id'])) { ?>
             <a href="./index.php?">
                     <div class="logo">
                         <img src="./assets/logo_transp.png" alt="logo de thinkimmo">
